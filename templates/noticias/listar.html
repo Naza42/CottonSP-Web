@@ -13,25 +13,14 @@
               <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                   <div class="col-lg-6 text-center">
-                    <h2>Blog</h2>
-                    <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                    <h2>Noticias</h2>
                   </div>
                 </div>
               </div>
             </div>
-            <nav>
-              <div class="container">
-                <ol>
-                  <li><a href="index.html">Home</a></li>
-                  <li>Portal de noticias</li>
-                </ol>
-              </div>
-            </nav>
           </div><!-- End Breadcrumbs -->
       
           <!-- ======= Blog Section ======= -->
-
-          <h2>Aquí están mis noticias</h2> 
 
           {% if request.user.tipo_usuario == 'Colaborador' or request.user.is_superuser%}
           <div class="">
@@ -55,14 +44,6 @@
               </div>
             </div>
           </div>
-          <div class="d-flex buttons align-items-center">
-            <button class="btn-get-started">Ordenar</button>
-              <div class="movi">
-                <a href="?antiguedad_asc=1" class="text-decoration-none">Antiguas</a>
-                <a  href="?antiguedad_desc=1" class="text-decoration-none">Recientes</a>
-                <a href="?orden_asc=1" class="text-decoration-none">A-Z</a>
-                <a href="?orden_desc=1" class="text-decoration-none">Z-A</a>
-              </div>
           </div>
           </div>
 

@@ -19,13 +19,14 @@
 
 body{
   text-decoration: none;
+  background-color: var(--color-default) !important;
 }
 
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs .page-header {
-  padding: 140px 0 60px 0 !important;
+  padding: 210px 0 60px 0 !important;
   min-height: 20vh;
   position: relative;
 
