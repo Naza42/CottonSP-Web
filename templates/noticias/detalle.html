@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+    <head>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/detalle.css' %}">
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="vendor/aos/aos.css" rel="stylesheet">
+        <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    </head>
+
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <nav>
+          <div class="container">
+            <ol>
+              <li><a href="{% url 'noticias:listar' %}">Noticias</a></li>
+              <li>Blog Details</li>
+            </ol>
+          </div>
+        </nav>
+      </div><!-- End Breadcrumbs -->
+
+      <!-- ======= Blog Details Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row g-5">
+  
+            <div class="col-lg-8">
+  
+              <article class="blog-details">
+  
+                <div class="post-img">
+                  <img src="{{ noticia.imagen.url }}" alt="" class="img-fluid">
+                </div>
+  
+                <h2 class="title"> {{noticia.titulo}} </h2>
+  
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html"> {{noticia.author}} </a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{ noticia.fecha_de_publicacion }}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                  </ul>
+                </div><!-- End meta top -->
+  
+                <div class="content">
+                  <p>
+                    {{ noticia.contenido }}
+                  </p>
+                </div><!-- End post content -->
+  
+                <div class="meta-bottom">
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <a href="/noticias/categoria/{{ noticia.categoria_noticia }}">{{ noticia.categoria_noticia }}</a>
+
+                  </ul>
+              </article><!-- End blog post -->
+  
+
+              {% comment %} <!-- ======= Comentarios ======= -->
+              <div class="comments">
+
+                <h4 class="comments-count">Comentarios</h4>
+                {% for comment in comments %}
+                <div id="comment-1" class="comment">
+                  <div class="d-flex">
+                    <div class="comment-img"><img src="{{user.imagen.url}}" alt=""></div>
+                    <div>
+                      <h5><a href="">{{ comment.author }}</a> </h5>
+                      <time datetime="2020-01-01">{{ comment.created_at }}</time>
+                      <p>
+                        {{ comment.text }}
+                      </p>
+                      <form method="POST" action="{% url 'noticias:delete_comment' comment.id %}">
+                        {% csrf_token %}
+                        {% if comment.author == user.username or user.is_staff or user.is_superuser %}
+                            <button class="btn btn-primary" type="submit">Borrar comentario</button>
+                            <a href="{% url 'noticias:edit_comment' comment_id=comment.id %}" class="btn btn-primary">Editar comentario</a>
+                        {% endif %}
+                    </div>
+                  </div>
+                </div><!-- End comment #1 -->
+                {% empty %}
+                        <p>No hay comentarios.</p>
+                {% endfor %}
+                
+  
+                <div class="reply-form">
+                {% if user.is_authenticated %}
+                  <h4>Dejanos un comentario</h4>
+                  <p>Your email address will not be published. Required fields are marked * </p>
+                  <form method="POST" action="{% url 'noticias:add_comment' noticia.pk %}">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col form-group">
+                        {{form.as_p}}
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Publicar</button>
+  
+                  </form>
+  
+                </div>
+                {% else %}
+                <p>Debe iniciar sesión para añadir un comentario</p>
+                <a href="{% url 'login' %}" class="btn-get-started">LOGIN</a>
+                {% endif %}
+
+              </div><!-- End blog comments --> {% endcomment %}
+
+
+    <script src="{% static 'js/all.js' %}"></script>
+{% endblock contenido %}
+
+
+

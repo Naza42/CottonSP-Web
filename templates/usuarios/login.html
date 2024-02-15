@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Login{% endblock titulo %}
+{% block contenido %}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+
+
+
+{% comment %} <div class="contenedor_formulario ">
+    <form method="POST">{% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <input type="text" name="username" placeholder="Usuario" id="inputLogin">
+        <input type="password" name="password" placeholder="Contraseña" id="inputLogin">
+        <button type="submit" style=" margin-left: 50%; padding: 5px 20px;">Login</button>
+    </form>
+</div> {% endcomment %}
+
+<body>
+    <div class="login-dark">
+        <form method="POST">{% csrf_token %}
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+            <h2 class="sr-only">Login</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Usuario" id="inputLogin"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" id="inputLogin"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">LogIn</button></div><a href="{% url 'registro' %}" class="forgot">No tienes cuenta? Registrate</a></form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock contenido %}
