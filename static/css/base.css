@@ -872,7 +872,10 @@
   }
   
 
-  
+  .div_lenguajes{
+    left: auto;
+    display: grid;
+  }
   
   
   /**
@@ -952,6 +955,14 @@
       display: flex;
       margin-left: 1rem;
       align-items: end;
+    }
+    footer .container{
+      justify-content: center;
+      display: grid;
+      gap: 5px;
+    }
+    footer .container .social-list{
+      padding-left: 0;
     }
   }
   @media (width <= 990px){
