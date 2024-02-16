@@ -2,7 +2,7 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,12 +36,12 @@
   <!-- 
     - preload images
   -->
-
   <link rel="preload" as="image" href="{% static 'img/hero-banner.svg' %}">
   <link rel="preload" as="image" href="{% static 'img/Blog.svg' %}">
   {% block estilos %}
   {% endblock estilos %}
 
+    
 
 </head>
   <body>
@@ -93,19 +93,19 @@
         <ul class="navbar-list w-75 justify-content-around">
 
           <li>
-            <a href="{% url 'home' %}" class="navbar-link">Inicio</a>
+            <a href="{% url 'home' %}" class="navbar-link">Home</a>
           </li>
 
           <li>
-            <a href="{% url 'quienes_somos' %}" class="navbar-link">Quienes somos</a>
+            <a href="{% url 'quienes_somos' %}" class="navbar-link">About us</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Productos</a>
+            <a href="#" class="navbar-link">Projects</a>
           </li>
 
           <li>
-            <a href="{% url 'noticias:listar' %}" class="navbar-link">Noticias</a>
+            <a href="{% url 'noticias:listar' %}" class="navbar-link">News</a>
           </li>
           <!--
           <li>
@@ -155,7 +155,6 @@
 
   
 {% block contenido %}
-
 {% endblock contenido %}
 
 
@@ -164,7 +163,7 @@
   -->
 
   <footer class="footer">
- 
+    
     <div class="container">
 
       <p class="copyright">
@@ -192,21 +191,19 @@
           </a>
         </li>
 
-
-      </ul>
-      <div class="div_lenguajes" >              
+        
+      </ul>         
         <form action="{% url 'set_language' %}" method="POST" class='d-flex mt-3 justify-content-around'>
           {% csrf_token %}
-          <input type="submit" value="Cambiar idioma" class='btn fs-6 rounded ' />
-            <select class="form-select btn rounded border-0" aria-label="Idioma" name='language'>
-              <option value="en">Ingles</option>
-              <option value="es">Español</option>         
-            </select>      
-            
+          <input type="submit" value="Change language" class='btn fs-6 rounded'/>
+          <select class="form-select btn rounded border-0" aria-label="Idioma" name='language'>
+            <option value="es">Spanish</option>  
+            <option value="en">English</option>       
+          </select>
+           
       </form>
-      </div>
+      
     </div>
-    
   </footer>
 </body>
   <!-- 

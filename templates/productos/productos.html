@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href='{% static "css/productos.css" %}'>
+{% endblock estilos %}
+
+{% block contenido %}   
+<section class="section hero">
+    <div class="container">
+        <h2>Lista de Productos</h2>
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.titulo }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.titulo }}</h5>
+                        <p class="card-text">{{ producto.resumen }}</p>
+                        <a href="{% url 'detalle_producto' producto.id %}" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock contenido %}

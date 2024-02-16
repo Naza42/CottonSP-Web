@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %} Productos {% endblock titulo %}
+
+{% block estilos %}
+
+{% endblock estilos %}
+
+{% block contenido %}
+<section class="section hero">
+    <div class="container">
+        <h2>Cargar Nuevo Producto</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo">
+            </div>
+            <div class="form-group">
+                <label for="resumen">Resumen:</label>
+                <textarea class="form-control" id="resumen" name="resumen"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" class="form-control-file" id="imagen" name="imagen">
+            </div>
+            <button type="submit" class="btn btn-primary">Cargar Producto</button>
+        </form>
+    </div>
+</section>
+{% endblock contenido%}
