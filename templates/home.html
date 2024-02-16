@@ -2,9 +2,6 @@
 {% load static %}
 {% block contenido %}   
 
-<head>
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-</head>
 <main>
   {% if mensaje %}
     <div class="position-absolute end-0 alert  alert-dismissible fade show col-12 col-sm-4 text-dark" role="alert" style='z-index:4;background-color:#A0CC00;top: 15rem;'>
@@ -138,11 +135,11 @@
           <li data-reveal="bottom">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-1.svg' %}" width="52" height="52" loading="lazy" alt="web design icon">
               </div>
 
-              <h3 class="h4 card-title">Desarrollo de aplicaciones web</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Desarrollo de aplicaciones web</h3>
 
               <p class="card-text">
                 Diseñamos y desarrollamos aplicaciones web personalizadas que se ajustan a las necesidades específicas de tu negocio.
@@ -154,11 +151,11 @@
           <li data-reveal="bottom" data-reveal-delay="0.25s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-2.svg' %}" width="52" height="52" loading="lazy" alt="mobile design icon">
               </div>
 
-              <h3 class="h4 card-title">
+              <h3 class="h4 card-title col-8 col-md-12">
                 Desarrollo de Aplicaciones Móviles</h3>
 
               <p class="card-text">
@@ -171,12 +168,12 @@
           <li data-reveal="bottom" data-reveal-delay="0.5s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-3.svg' %}" width="52" height="52" loading="lazy"
                   alt="web development icon">
               </div>
 
-              <h3 class="h4 card-title">Software a medida</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Software a medida</h3>
 
               <p class="card-text">
                 Más allá de simples programas, diseñamos herramientas digitales innovadoras que se ajustan a las necesidades específicas de tu empresa
@@ -188,11 +185,11 @@
           <li data-reveal="bottom" data-reveal-delay="0.75s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-4.svg' %}" width="52" height="52" loading="lazy" alt="web seo icon">
               </div>
 
-              <h3 class="h4 card-title">Actualizacion</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Actualizacion</h3>
 
               <p class="card-text">
                 Comprendemos que las migraciones y actualizaciones de sistemas pueden ser un proceso complejo y desafiante. Por ello, te ofrecemos un servicio integral que te permite navegar el cambio con confianza y minimizar la disrupción en tu negocio.
@@ -231,7 +228,7 @@
 
         </div>
 
-        <ul class="grid-list">
+        <ul class="grid-list p-0">
 
           <li>
             <div class="project-card project-card-1" style="background-color: #222222">

@@ -466,14 +466,25 @@
   
   .progress-fill { height: inherit; }
   
-  .about-card { text-align: center; }
+  .about-card { 
+    --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+   }
   
   .about-card .card-icon {
     max-width: max-content;
     margin-inline: auto;
+    margin-bottom: 1rem;
   }
   
-  .about-card .card-title { margin-block: 16px 10px; }
+  .about-card .card-title { 
+    height: 5rem;
+   }
   
   
   
@@ -923,4 +934,20 @@
   
     .about .grid-list { gap: 60px; }
   
+  }
+  @media  (width <= 768px) {
+    .about-card .card-icon {
+      margin-inline: 0;
+    }
+    .about-card .card-title{
+      display: flex;
+      margin-left: 1rem;
+      align-items: end;
+    }
+  }
+  @media (width <= 990px){
+    .navbar-list{
+      width: auto !important;
+      padding-left: 0;
+    }
   }
