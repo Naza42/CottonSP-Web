@@ -14,7 +14,7 @@
         <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     </head>
 
-
+<section>
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
@@ -46,9 +46,8 @@
   
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html"> {{noticia.author}} </a></li>
+                    {% comment %} <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html"> {{noticia.author}} </a></li> {% endcomment %}
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{ noticia.fecha_de_publicacion }}</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
                   </ul>
                 </div><!-- End meta top -->
   
@@ -65,59 +64,9 @@
 
                   </ul>
               </article><!-- End blog post -->
-  
 
-              {% comment %} <!-- ======= Comentarios ======= -->
-              <div class="comments">
-
-                <h4 class="comments-count">Comentarios</h4>
-                {% for comment in comments %}
-                <div id="comment-1" class="comment">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="{{user.imagen.url}}" alt=""></div>
-                    <div>
-                      <h5><a href="">{{ comment.author }}</a> </h5>
-                      <time datetime="2020-01-01">{{ comment.created_at }}</time>
-                      <p>
-                        {{ comment.text }}
-                      </p>
-                      <form method="POST" action="{% url 'noticias:delete_comment' comment.id %}">
-                        {% csrf_token %}
-                        {% if comment.author == user.username or user.is_staff or user.is_superuser %}
-                            <button class="btn btn-primary" type="submit">Borrar comentario</button>
-                            <a href="{% url 'noticias:edit_comment' comment_id=comment.id %}" class="btn btn-primary">Editar comentario</a>
-                        {% endif %}
-                    </div>
-                  </div>
-                </div><!-- End comment #1 -->
-                {% empty %}
-                        <p>No hay comentarios.</p>
-                {% endfor %}
-                
+            </section>
   
-                <div class="reply-form">
-                {% if user.is_authenticated %}
-                  <h4>Dejanos un comentario</h4>
-                  <p>Your email address will not be published. Required fields are marked * </p>
-                  <form method="POST" action="{% url 'noticias:add_comment' noticia.pk %}">
-                    {% csrf_token %}
-                    <div class="row">
-                      <div class="col form-group">
-                        {{form.as_p}}
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Publicar</button>
-  
-                  </form>
-  
-                </div>
-                {% else %}
-                <p>Debe iniciar sesión para añadir un comentario</p>
-                <a href="{% url 'login' %}" class="btn-get-started">LOGIN</a>
-                {% endif %}
-
-              </div><!-- End blog comments --> {% endcomment %}
-
 
     <script src="{% static 'js/all.js' %}"></script>
 {% endblock contenido %}
