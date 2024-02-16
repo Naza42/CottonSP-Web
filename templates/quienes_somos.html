@@ -1,9 +1,73 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block titulo %} Quienes Somos {% endblock titulo %}
-{% static "css/style.css" %}
+{% block estilos %}
+<link rel="stylesheet" href='{% static "css/about.css" %}'>
+
+{% endblock estilos %}
+
 {% block contenido %}
-    <body>
+    <section class="section hero">
+        <h1 class="mx-auto d-flex">¿Quienes Somos?</h1>
+        <div class="card  mx-auto" >
+            <div class="row mx-0 mx-md-auto">
+              <div class="col-md-4">
+                <img src="{% static 'img/hero-banner.jpg' %}" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body m-0 p-0">                  
+                  <p class="card-text fw-semibold"><span class="span_gradient" style="display: inline-block">Cotton SP</span> es una marca que se enfoca en desarrollar <span class="span_gradient" style="display: inline-block"> soluciones de software de alta calidad </span> e innovadoras de manera sostenible, con el propósito de mejorar la calidad de vida y contribuir al bienestar social.
+                    <br>
+                    La propuesta de valor única de Cotton SP se basa en su enfoque en habilidades blandas, metodologías ágiles y objetivos de desarrollo sostenible, así como en su compromiso con la responsabilidad social. También se diferencian de la competencia por su enfoque en la <span class="span_gradient" style="display: inline-block">flexibilidad y la adaptabilidad</span>. Permitiéndo ofrecer soluciones personalizadas y ajustadas a las necesidades específicas de cada cliente.                
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section>
+        <h3 class="mx-auto d-flex">Nuestro Equipo</h3>
+        <div class=" row w-75 mx-auto justify-content-around">            
+            <div class=" card col-md-3 bg-transparent border-0 m-2">
+                <img src="{% static 'img/equipo/lucas.jpg' %}"
+                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
+                <div class="card-body">
+                    <h5 class="card-title">NOMBRE</h5>
+                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
+                        Desarrollo de Software</p>
+                    <div class="text-center">
+                        <a href="" class="btn btn-primary"><img
+                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
+                    </div>
+                </div>
+            </div>
+            <div class=" card col-md-3 bg-transparent border-0 m-2">
+                <img src="{% static 'img/equipo/' %}"
+                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
+                <div class="card-body">
+                    <h5 class="card-title">NOMBRE</h5>
+                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
+                        Desarrollo de Software</p>
+                    <div class="text-center">
+                        <a href="" class="btn btn-primary"><img
+                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
+                    </div>
+                </div>
+            </div>
+            <div class=" card col-md-3 bg-transparent border-0 m-2">
+                <img src="{% static 'img/equipo/' %}"
+                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
+                <div class="card-body">
+                    <h5 class="card-title">NOMBRE</h5>
+                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
+                        Desarrollo de Software</p>
+                    <div class="text-center">
+                        <a href="" class="btn btn-primary"><img
+                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
+                    </div>
+                </div>
+            </div>            
+        </div>
         
-    </body>
+    </section>
 {% endblock contenido %}

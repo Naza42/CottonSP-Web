@@ -2,10 +2,13 @@
 {% load static %}
 {% block contenido %}   
 
-<head>
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-</head>
 <main>
+  {% if mensaje %}
+    <div class="position-absolute end-0 alert  alert-dismissible fade show col-12 col-sm-4 text-dark" role="alert" style='z-index:4;background-color:#A0CC00;top: 15rem;'>
+      <p>{{ mensaje }}</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
   <article>
 
     <!-- 
@@ -16,7 +19,7 @@
       <div class="container">
 
         <figure class="hero-banner">
-          <img src="{% static 'img/hero-banner.jpg' %}" width="560" height="540" alt="Julia" class="w-102"
+          <img src="{% static 'img/hero-banner.jpg' %}" width="560" height="540" alt="Julia" class="w-102 col-12 col-md-8 col-xl-10 mx-sm-auto"
             data-reveal="top">
           
         </figure>
@@ -24,7 +27,7 @@
         <div class="hero-content">
 
           <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-            Creamos software para <span class="potenciar" style="display: inline-block">potenciar</span> tu negocio.
+            Creamos software para <span class="span_gradient" style="display: inline-block">potenciar</span> tu negocio.
           </h1>
 
           <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
@@ -34,7 +37,7 @@
           <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
             <a href="#" class="btn btn-primary">Proyectos</a>
 
-            <a href="{% url 'contacto:contacto' %}" class="btn btn-secondary">Contactanos</a>
+            <a href="#contacto" class="btn btn-secondary">Contactanos</a>
           </div>
 
         </div>
@@ -132,11 +135,11 @@
           <li data-reveal="bottom">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-1.svg' %}" width="52" height="52" loading="lazy" alt="web design icon">
               </div>
 
-              <h3 class="h4 card-title">Desarrollo de aplicaciones web</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Desarrollo de aplicaciones web</h3>
 
               <p class="card-text">
                 Diseñamos y desarrollamos aplicaciones web personalizadas que se ajustan a las necesidades específicas de tu negocio.
@@ -148,11 +151,11 @@
           <li data-reveal="bottom" data-reveal-delay="0.25s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-2.svg' %}" width="52" height="52" loading="lazy" alt="mobile design icon">
               </div>
 
-              <h3 class="h4 card-title">
+              <h3 class="h4 card-title col-8 col-md-12">
                 Desarrollo de Aplicaciones Móviles</h3>
 
               <p class="card-text">
@@ -165,12 +168,12 @@
           <li data-reveal="bottom" data-reveal-delay="0.5s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-3.svg' %}" width="52" height="52" loading="lazy"
                   alt="web development icon">
               </div>
 
-              <h3 class="h4 card-title">Software a medida</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Software a medida</h3>
 
               <p class="card-text">
                 Más allá de simples programas, diseñamos herramientas digitales innovadoras que se ajustan a las necesidades específicas de tu empresa
@@ -182,11 +185,11 @@
           <li data-reveal="bottom" data-reveal-delay="0.75s">
             <div class="about-card">
 
-              <div class="card-icon">
+              <div class="card-icon col-4 col-md-12">
                 <img src="{% static 'img/icon-4.svg' %}" width="52" height="52" loading="lazy" alt="web seo icon">
               </div>
 
-              <h3 class="h4 card-title">Actualizacion</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Actualizacion</h3>
 
               <p class="card-text">
                 Comprendemos que las migraciones y actualizaciones de sistemas pueden ser un proceso complejo y desafiante. Por ello, te ofrecemos un servicio integral que te permite navegar el cambio con confianza y minimizar la disrupción en tu negocio.
@@ -221,11 +224,11 @@
             </p>
           </div>
 
-          <a href="#" class="btn btn-secondary">See All Projects</a>
+          <a href="#" class="btn btn-secondary d-flex mx-auto d-md-block mx-md-0">See All Projects</a>
 
         </div>
 
-        <ul class="grid-list">
+        <ul class="grid-list p-0">
 
           <li>
             <div class="project-card project-card-1" style="background-color: #222222">
@@ -379,8 +382,21 @@
             </p>
 
           </div>
-
-          <form action="" class="contact-form" data-reveal="right">
+         
+          <form action="" method='POST' id='contacto' class="contact-form" data-reveal="right"> 
+            {% csrf_token %}
+            {% for items in form  %}
+              {% if forloop.first %}
+                <div class="input-wrapper">
+                {{ items }}
+              {% elif forloop.counter == 2 %}
+                  {{ items }}
+                  </div>
+              {% else %}
+                  {{items}}
+              {% endif %}
+            {% endfor %}            
+            <!--
 
             <div class="input-wrapper">
               <input type="text" name="name" placeholder="Name *" required class="input-field">
@@ -389,11 +405,11 @@
             </div>
 
             <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
-
+            -->
             <button type="submit" class="btn btn-secondary">Send message</button>
-
+            
           </form>
-
+          
         </div>
 
       </div>

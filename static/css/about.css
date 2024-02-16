@@ -1,0 +1,30 @@
+.card{
+    background-color: var(--cultured);
+    color: var(--charcoal);
+    max-width: 1320px;
+    border: none;
+}
+h1{
+    color: var(--charcoal);
+    max-width: max-content;
+    font-size: xxx-large !important;
+    margin-bottom: 5rem;
+}
+h1:hover{
+    color: var(--cinnamon-satin)
+}
+h3{
+    margin-top: 3rem;
+    font-size: xxx-large !important;
+    max-width: max-content;
+    color: var(--cinnamon-satin);
+}
+.card-img{
+    max-height: 25rem;
+    object-fit: contain;
+}
+@media (width <= 768px) {
+    h1{
+        text-align: center;
+    }
+}
