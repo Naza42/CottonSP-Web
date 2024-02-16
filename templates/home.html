@@ -6,6 +6,12 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <main>
+  {% if mensaje %}
+    <div class="position-absolute end-0 alert  alert-dismissible fade show col-12 col-sm-4 text-dark" role="alert" style='z-index:4;background-color:#A0CC00;top: 15rem;'>
+      <p>{{ mensaje }}</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
   <article>
 
     <!-- 
@@ -16,7 +22,7 @@
       <div class="container">
 
         <figure class="hero-banner">
-          <img src="{% static 'img/hero-banner.jpg' %}" width="560" height="540" alt="Julia" class="w-102"
+          <img src="{% static 'img/hero-banner.jpg' %}" width="560" height="540" alt="Julia" class="w-102 col-12 col-md-8 col-xl-10 mx-sm-auto"
             data-reveal="top">
           
         </figure>
@@ -379,8 +385,21 @@
             </p>
 
           </div>
-
-          <form action="" class="contact-form" data-reveal="right">
+         
+          <form action="" method='POST' class="contact-form" data-reveal="right"> 
+            {% csrf_token %}
+            {% for items in form  %}
+              {% if forloop.first %}
+              <div class="input-wrapper">
+                {{ items }}
+              {% elif forloop.counter == 2 %}
+                {{ items }}
+                </div>
+                {% else %}
+                {{items}}
+              {% endif %}
+            {% endfor %}            
+            <!--
 
             <div class="input-wrapper">
               <input type="text" name="name" placeholder="Name *" required class="input-field">
@@ -389,11 +408,11 @@
             </div>
 
             <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
-
+            -->
             <button type="submit" class="btn btn-secondary">Send message</button>
-
+            
           </form>
-
+          
         </div>
 
       </div>

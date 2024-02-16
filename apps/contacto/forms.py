@@ -17,4 +17,12 @@ class ContactoForm(forms.ModelForm):
             'avisos': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
 
-    
+class ContactoFormIndex(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = ['nombre', 'correo', 'mensaje']
+        widgets = {
+            'nombre': TextInput(attrs={'class': 'input-field','placeholder':'Name *'}),
+            'correo': TextInput(attrs={'class': 'input-field','placeholder':'Email *'}),
+            'mensaje': forms.Textarea(attrs={'class': 'input-field','placeholder':'Message *'}),
+        }
