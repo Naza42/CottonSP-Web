@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'en/baseEn.html' %}
 {% load static %}
 {% block contenido %}   
 
@@ -27,17 +27,17 @@
         <div class="hero-content">
 
           <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-            Creamos software para <span class="span_gradient" style="display: inline-block">potenciar</span> tu negocio.
+            We create software to <span class="span_gradient" style="display: inline-block">enhance</span> your business.
           </h1>
 
           <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-            Transformamos tus ideas en soluciones digitales innovadoras y escalables.
+            We transform your ideas into innovative and scalable digital solutions.
           </p>
 
           <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-            <a href="#" class="btn btn-primary">Proyectos</a>
+            <a href="#" class="btn btn-primary">Projects</a>
 
-            <a href="#contacto" class="btn btn-secondary">Contactanos</a>
+            <a href="#contacto" class="btn btn-secondary">Contact us</a>
           </div>
 
         </div>
@@ -59,12 +59,12 @@
         <div class="wrapper">
 
           <div data-reveal="left">
-            <h2 class="h2 section-title">¿Qué ofrecemos?</h2>
+            <h2 class="h2 section-title">What we offer?</h2>
 
             <p class="section-text">
-              En CottonSP, nuestra pasión es convertir tus ideas en soluciones digitales innovadoras y escalables.
-              Para ello, te ofrecemos una amplia gama de servicios de desarrollo
-              de software que se adaptan a las necesidades específicas de tu negocio.
+                At CottonSP, our passion is turning your ideas into innovative and scalable digital solutions.
+                To do this, we offer you a wide range of development services.
+                of software that adapt to the specific needs of your business.
             </p>
           </div>
 
@@ -139,10 +139,10 @@
                 <img src="{% static 'img/icon-1.svg' %}" width="52" height="52" loading="lazy" alt="web design icon">
               </div>
 
-              <h3 class="h4 card-title col-8 col-md-12">Desarrollo de aplicaciones web</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Web applications development</h3>
 
               <p class="card-text">
-                Diseñamos y desarrollamos aplicaciones web personalizadas que se ajustan a las necesidades específicas de tu negocio.
+                We design and develop custom web applications that fit the specific needs of your business.
               </p>
 
             </div>
@@ -156,10 +156,10 @@
               </div>
 
               <h3 class="h4 card-title col-8 col-md-12">
-                Desarrollo de Aplicaciones Móviles</h3>
+                Mobile application development</h3>
 
               <p class="card-text">
-                Desarrollamos aplicaciones móviles nativas para iOS y Android con un diseño atractivo y una experiencia de usuario fluida.
+                We develop native mobile apps for iOS and Android with attractive design and smooth user experience.
               </p>
 
             </div>
@@ -173,10 +173,10 @@
                   alt="web development icon">
               </div>
 
-              <h3 class="h4 card-title col-8 col-md-12">Software a medida</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Custom software</h3>
 
               <p class="card-text">
-                Más allá de simples programas, diseñamos herramientas digitales innovadoras que se ajustan a las necesidades específicas de tu empresa
+                Beyond simple programs, we design innovative digital tools that adjust to the specific needs of your company
               </p>
 
             </div>
@@ -189,10 +189,10 @@
                 <img src="{% static 'img/icon-4.svg' %}" width="52" height="52" loading="lazy" alt="web seo icon">
               </div>
 
-              <h3 class="h4 card-title col-8 col-md-12">Actualizacion</h3>
+              <h3 class="h4 card-title col-8 col-md-12">Updates</h3>
 
               <p class="card-text">
-                Comprendemos que las migraciones y actualizaciones de sistemas pueden ser un proceso complejo y desafiante. Por ello, te ofrecemos un servicio integral que te permite navegar el cambio con confianza y minimizar la disrupción en tu negocio.
+                We understand that system migrations and upgrades can be a complex and challenging process. Therefore, we offer you a comprehensive service that allows you to navigate change with confidence and minimize disruption to your business.
               </p>
 
             </div>
@@ -377,13 +377,13 @@
             <h2 class="h2 section-title">Contactate con nosotros</h2>
 
             <p class="section-text">
-              Aportamos soluciones rápidas para hacer la vida de los clientes mas facil. ¿Tiene alguna pregunta? Comuníquese con nosotros desde
-              este formulario de contacto y nos comunicaremos con usted en la brevedad.
+              I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from
+              this contact form and I will get back to you shortly.
             </p>
 
           </div>
          
-          <form action="" method='POST' id='contacto' class="contact-form" data-reveal="right"> 
+          <form action="" method='POST' id='contacto' class="contact-form" data-reveal="right" > 
             {% csrf_token %}
             {% for items in form  %}
               {% if forloop.first %}
@@ -406,7 +406,7 @@
 
             <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
             -->
-            <button type="submit" class="btn btn-secondary">Enviar</button>
+            <button type="submit" class="btn btn-secondary">Send message</button>
             
           </form>
           
