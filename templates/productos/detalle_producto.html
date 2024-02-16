@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<section calss="section hero">
+    <div class="container">
+        <h2>{{ producto.titulo }}</h2>
+        <div class="card">
+            <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.titulo }}">
+            <div class="card-body">
+                <p class="card-text">{{ producto.descripcion }}</p>
+                <a href="{% url 'lista_productos' %}" class="btn btn-secondary">Volver a la lista</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock contenido %}
