@@ -40,7 +40,7 @@
           <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
             <a href="#" class="btn btn-primary">Proyectos</a>
 
-            <a href="{% url 'contacto:contacto' %}" class="btn btn-secondary">Contactanos</a>
+            <a href="#contacto" class="btn btn-secondary">Contactanos</a>
           </div>
 
         </div>
@@ -227,7 +227,7 @@
             </p>
           </div>
 
-          <a href="#" class="btn btn-secondary">See All Projects</a>
+          <a href="#" class="btn btn-secondary d-flex mx-auto d-md-block mx-md-0">See All Projects</a>
 
         </div>
 
@@ -386,17 +386,17 @@
 
           </div>
          
-          <form action="" method='POST' class="contact-form" data-reveal="right"> 
+          <form action="" method='POST' id='contacto' class="contact-form" data-reveal="right"> 
             {% csrf_token %}
             {% for items in form  %}
               {% if forloop.first %}
-              <div class="input-wrapper">
+                <div class="input-wrapper">
                 {{ items }}
               {% elif forloop.counter == 2 %}
-                {{ items }}
-                </div>
-                {% else %}
-                {{items}}
+                  {{ items }}
+                  </div>
+              {% else %}
+                  {{items}}
               {% endif %}
             {% endfor %}            
             <!--
