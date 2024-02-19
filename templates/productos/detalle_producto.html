@@ -2,15 +2,11 @@
 {% load static %}
 
 {% block contenido %}
-<section calss="section hero">
+<section class="section hero">
     <div class="container">
-        <h2>{{ producto.titulo }}</h2>
-        <div class="card">
-            <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.titulo }}">
-            <div class="card-body">
-                <p class="card-text">{{ producto.descripcion }}</p>
-                <a href="{% url 'lista_productos' %}" class="btn btn-secondary">Volver a la lista</a>
-            </div>
+        <h2 class='text-center fw-bold fs-1'>{{ producto.titulo }}</h2>
+        <div class="card border-0 rounded" style = 'background-image: url("{{ producto.imagen.url }}");'>
+            <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.titulo }}">            
         </div>
     </div>
 </section>
