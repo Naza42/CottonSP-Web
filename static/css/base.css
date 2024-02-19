@@ -597,7 +597,12 @@
   
   .footer .social-link { color: var(--charcoal); }
   
-  
+  .logo {
+    fill: #f0f0f0;
+  } 
+  .logo:hover{
+    fill: var(--cinnamon-satin);
+  }
   
   
   
@@ -793,12 +798,7 @@
       max-width: unset;
       border-radius: 0;
     }
-    .logo {
-      fill: #f0f0f0;
-    } 
-    .logo:hover{
-      fill: var(--cinnamon-satin);
-    }
+    
   
   
     /**
@@ -969,10 +969,5 @@
     .navbar-list{
       width: auto !important;
       padding-left: 0;
-    }
-  }
-  @media only screen and (max-width: 768px){
-    .logo{
-      fill: #f0f0f0;
     }
   }
