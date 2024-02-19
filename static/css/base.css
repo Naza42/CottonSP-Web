@@ -34,7 +34,7 @@
     --gunmetal: hsla(214, 15%, 21%, 1);
     --charcoal: hsla(219, 22%, 26%, 1); */
   
-  --white: #292927;  /* Inverted from hsla(0, 0%, 100%, 1) */
+  --bg-color: #292927;  /* Inverted from hsla(0, 0%, 100%, 1) */
   --white_a8: hsla(0, 0%, 0%, 0.08);  /* Inverted from hsla(0, 0%, 100%, 0.08) */
   --white_a12: hsla(0, 0%, 0%, 0.12);  /* Inverted from hsla(0, 0%, 100%, 0.12) */
   --cultured: #222222;  /* Inverted from hsla(220, 20%, 97%, 1) */
@@ -233,7 +233,7 @@
   .btn-primary,
   .btn-secondary:is(:hover, :focus-visible) {
     background-color: var(--cinnamon-satin);
-    color: var(--white);
+    color: var(--bg-color);
   }
   
   .section-text { font-size: var(--fs-5); }
@@ -335,7 +335,7 @@
   
   .nav-close-btn {
     background-color: var(--white_a8);
-    color: var(--white);
+    color: var(--bg-color);
     font-size: 2rem;
     padding: 6px;
     border-radius: var(--radius-circle);
@@ -565,7 +565,7 @@
   .contact .section-title { margin-block-start: 20px; }
   
   .input-field {
-    background-color: var(--white);
+    background-color: var(--bg-color);
     color: var(--black-coral);
     font-size: var(--fs-7);
     padding: 14px 18px;
