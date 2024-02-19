@@ -2,11 +2,9 @@
 {% load static %}
 {% block titulo %}Login{% endblock titulo %}
 {% block contenido %}
-
+{% load django_bootstrap5 %}
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
+    {% bootstrap_css %}
 
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
@@ -41,7 +39,7 @@
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" id="inputLogin"></div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">LogIn</button></div><a href="{% url 'registro' %}" class="forgot">No tienes cuenta? Registrate</a></form>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    {% bootstrap_javascript %}
+    
 </body>
 {% endblock contenido %}
