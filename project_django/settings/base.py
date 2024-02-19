@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.noticias',
     'apps.contacto',
     'apps.productos',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
