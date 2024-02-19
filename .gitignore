@@ -28,7 +28,7 @@ db.sqlite3-journal
 secret_keys.py
 
 #ingorar migraciones no iniciales
-migrations/
+
 
 #de Visual
 .vscode
