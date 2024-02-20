@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %} Panel Administración {% endblock titulo %}
+{% block estilos %}
+
+{% endblock estilos %}
+<link rel="stylesheet" href="{% static 'css/admin_panel.css' %}">
+{% block contenido %}
+<section class="section hero">
+    <body>
+        <h1>Admin Panel</h1>
+        <h2>Lista de Usuarios</h2>
+        <ul>
+            {% for user in users %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+        <!-- Otros elementos del panel de administrador -->
+        <div>
+            <a class="btn"  href="{% url 'noticias:addnoticia' %}">Subir Noticias</a>
+            <a class="btn" href="{% url 'cargar_producto' %}">Subir Productos</a>
+        </div>
+    </body>
+</section>
+{% endblock contenido  %}
+
+

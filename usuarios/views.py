@@ -16,7 +16,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home') # Redirección a la página de inicio después del inicio de sesión
+            return redirect('admin_panel') # Redirección a la página de inicio después del inicio de sesión
         else:
             messages.error(request, 'Usuario o contraseña inválido, intente de nuevo')
     
@@ -34,4 +34,11 @@ class Registro(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'usuarios/registro.html'
 
+# admin_panel/views.py
+from django.shortcuts import render
+from django.contrib.auth.models import User
+
+def admin_panel(request):
+    users = Usuario.objects.all()
+    return render(request, 'usuarios/admin_panel.html', {'users': users})
 

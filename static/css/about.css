@@ -4,15 +4,16 @@
     max-width: 1320px;
     border: none;
 }
-h1{
+.cotton{
     color: var(--charcoal);
     max-width: max-content;
     font-size: xxx-large !important;
     margin-bottom: 5rem;
 }
-h1:hover{
+.cotton:hover{
     color: var(--cinnamon-satin)
 }
+
 h3{
     margin-top: 3rem;
     font-size: xxx-large !important;
@@ -24,7 +25,25 @@ h3{
     object-fit: contain;
 }
 @media (width <= 768px) {
-    h1{
+    .cotton{
         text-align: center;
     }
 }
+
+
+/* CottonAcademy */
+.cottonAC{
+    color: var(--charcoal);
+    max-width: max-content;
+    font-size: xxx-large !important;
+    margin-bottom: 2rem;
+}
+
+.cottonAC:hover{
+    color: #2FCBEB;
+}
+
+.cottonAC_color{
+    color: #2FCBEB;
+}
+
