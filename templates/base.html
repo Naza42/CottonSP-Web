@@ -49,7 +49,7 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
+  <header class="header" data-header       style="position: fixed"          >
     <div class="container">
 
       <a href="{% url 'home' %}" class="logo">
@@ -80,7 +80,7 @@
 </svg>
       </a>
 
-      <nav class="navbar" data-navbar>
+      <nav class="navbar" data-navbar style="top:0 ;padding: 0;" >
 
         <div class="navbar-top">
           <a href="{% url 'home' %}" class="logo">
@@ -101,7 +101,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Productos</a>
+            <a href="{% url 'lista_productos' %}" class="navbar-link">Productos</a>
           </li>
 
           <li>
