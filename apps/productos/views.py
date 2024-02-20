@@ -9,7 +9,8 @@ def lista_productos(request):
 
 def detalle_producto(request, producto_id):
     producto = get_object_or_404(Producto, pk=producto_id)
-    return render(request, 'productos/detalle_producto.html', {'producto': producto})
+    beneficios = producto.resumen_2.split('-')
+    return render(request, 'productos/detalle_producto.html', {'producto': producto,'beneficios':beneficios})
 @login_required()
 def cargar_producto(request):
     if request.method == 'POST':
