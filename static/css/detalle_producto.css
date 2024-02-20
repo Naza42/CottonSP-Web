@@ -1,0 +1,84 @@
+.section{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Agrega una sombra al contenedor */
+    
+    background: linear-gradient(135deg, #4a4a4a, #222222);
+}
+.section.border-top-1{
+    background: linear-gradient(45deg, #222222, #4a4a4a);
+}
+.container h1,h4{
+    color: #a07cc5;
+    
+}
+.container h1{
+    font-size: 7rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
+    border-radius: 10px; /* Añade bordes redondeados al contenedor */
+}
+.container h1::after {
+    content: ''; /* Agrega un pseudo-elemento para crear una superposición */
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    top: 0; /* Alinea el pseudo-elemento con la parte superior */
+    left: 0; /* Alinea el pseudo-elemento con la izquierda */
+    width: 100%; /* Ajusta el ancho al 100% */
+    height: 100%; /* Ajusta la altura al 100% */
+    background: rgba(0, 0, 0, 0.5); /* Agrega un fondo semi-transparente */
+}
+.container h1 span {
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Establece la posición relativa para el contenido del título */
+    z-index: 1; /* Coloca el contenido del título por encima del pseudo-elemento */
+  }
+.container h1 span:hover {
+    transform: scale(1.4);
+}
+
+h5{
+    font-size: 5rem;
+    color: #3f78e0;
+}
+.section-2{
+    max-width: 1320px;
+    
+}
+.section-2.active{
+    animation: slideIn 0.5s ease forwards;
+}
+.hero{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.card-bg{
+    transform: rotate3d(-1, 1, 0, 25deg);
+    transition: transform 1s ease;
+}
+
+.card-bg:hover{
+  transform: none; 
+  
+}
+.link_producto{
+    max-width: none;
+}
+.vh-95{
+    height: 95vh;
+}
+@keyframes slideIn {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+@media (width <= 540px){
+    h5{
+        font-size: 3rem;
+    }
+    .container h1 {
+        font-size: 4rem;
+    }
+}
+@media (width <= 992px){
+    .card-bg{
+        transform: none;
+    }
+}
+
