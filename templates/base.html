@@ -165,7 +165,10 @@
     <div class="container">
 
       <p class="copyright">
-        © 2024 CottonSP. All rights reserved.
+        {% now "Y" as current_year %}
+        ©
+        {% blocktranslate %} {{ current_year }} CottonSP. All rights reserved.{% endblocktranslate %}
+        
       </p>
 
       <ul class="social-list">
