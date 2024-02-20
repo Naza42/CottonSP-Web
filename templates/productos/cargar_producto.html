@@ -12,6 +12,7 @@
         <h2>Cargar Nuevo Producto</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+
             <div class="form-group">
                 <label for="titulo">Título:</label>
                 <input type="text" class="form-control" id="titulo" name="titulo" required>

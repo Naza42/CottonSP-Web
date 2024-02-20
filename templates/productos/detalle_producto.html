@@ -1,13 +1,96 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/detalle_producto.css' %}">
+{% endblock estilos %}
 {% block contenido %}
-<section class="section hero">
-    <div class="container">
-        <h2 class='text-center fw-bold fs-1'>{{ producto.titulo }}</h2>
-        <div class="card border-0 rounded" style = 'background-image: url("{{ producto.imagen.url }}");'>
-            <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.titulo }}">            
+<section class="section section-1 hero vh-95" data-reveal='top' >
+    <div class="container ">
+        <h1 class='text-center fw-bold '><span>{{ producto.titulo }}</span></h1>
+        <div class="card border-0 card-bg">
+            <img class="card-img-top rounded" src="{{ producto.imagen_principal.url }}" alt="{{ producto.titulo }}">            
+        </div> 
+    </div>
+</section>
+
+<section class="section border-top-1">
+    <div class="row section-2 mx-auto w-100 flex-column-reverse flex-lg-row p-5" data-reveal='left' data-reveal-delay='0.3s'>        
+        <div class="col-12 col-lg-6 p-0">            
+            <img class="img-fluid rounded" src="{{ producto.imagen_2.url }}" alt="" srcset="" >            
+        </div>
+        <div class="col-12 col-lg-6 ps-5 d-flex flex-column justify-content-between">
+            <div>
+                <h5 class="fw-semibold mb-5  pb-1"> Que Ofrecemos </h5>
+                <p class="text-white fw-medium lh-lg">
+                    {{ producto.resumen|capfirst  }}                
+                </p>
+            </div>
+            <div class='d-flex'>
+                {% if producto.url %}
+                <a
+                    name=""
+                    id=""
+                    class="btn btn-secondary mb-5 mb-lg-0 w-100"
+                    href="{{ producto.url }}"
+                    role="button"
+                    target="blank"
+                    >Probar demo
+                </a>
+                {% endif %}
+                <a
+                    name=""
+                    id=""
+                    class="btn btn-secondary mb-5 mb-lg-0 w-100 link_producto"
+                    href="#"
+                    role="button"
+                    >Lo Quiero
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
+<section class="section hero pt-5" data-reveal='botton' data-reveal-delay='0.2s'>
+    <div class='container d-block' >
+        <h4 class='fw-bold text-center' style="font-size: xxx-large;"> Que beneficios te ofrecemos </h4>
+        <div class="mt-5 col-12 w-100 d-block d-lg-flex justify-content-around align-items-center">                        
+            <ul class="list-group col-12 col-lg-6">
+                {% for beneficio in beneficios %}
+                    <li class="list-group-item bg-transparent mb-3 text-white border-0">
+                        <svg fill='#3f78e0'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle mx-3" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                        </svg>
+                        {{ beneficio }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <img
+            src="{{ producto.imagen_3.url }}"
+            class="img-fluid rounded-top col-12 col-lg-4 d-none d-lg-block"
+            alt=""
+            />        
+        </div>
+    </div>
+</section>
+<div class='container pt-3'>
+    <h5 class='w-100 text-center fw-semibol'>Ya te decidiste?</h5>
+    <div class="d-flex gap-2 justify-content-center">
+        <a
+            type="button"
+            name=""
+            id=""
+            class="btn btn-primary"
+        >Si.Lo quiero!
+        </a>
+        <a
+            href="{% url "home" %}#contacto"
+            type="button"
+            name=""
+            id=""
+            class="btn btn-secondary"
+        >No. Quisiera saber mas.
+        </a>
+    </div>
+</div>
 {% endblock contenido %}

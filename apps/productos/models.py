@@ -8,7 +8,7 @@ class Producto(models.Model):
     descripcion = models.TextField(max_length = 256)
     resumen = models.TextField(max_length = 256,blank = True)
     resumen_2 = models.TextField(max_length = 256,blank = True)
-
+    url = models.URLField(blank = True,null = True)
     def __str__(self):
         return self.titulo
     def delete(self):
