@@ -36,7 +36,7 @@
   <div class="container" style="background-color: #3938371c; border-radius: 10px; box-shadow: 0 4px 6px rgba(245, 240, 240, 0.1);;">
     <div class="row justify-content-around center align-items-center mb-5 mt-5 p-5">
       {% if forloop.counter|divisibleby:2 %}
-      <div class="col-md-4">
+      <div class="col-12 col-lg-4 order-2 order-lg-1">
         <div id="carouselExampleControls_{{ forloop.counter }}" class="carousel slide"data-bs-reveal="rigth"  data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -59,7 +59,7 @@
           </button>
         </div>
       </div>
-      <div class="col-md-4 order-md-2">
+      <div class="col-12 col-lg-4 order-1 order-lg-2">
         <div class="card-content" data-bs-reveal="left">
           <h2 class="card-tag fs-1" style="color: #a07cc5">{{ producto.titulo }}</h2>
           <p class="card-title fs-4" style="color: #fbf9fd;">{{ producto.resumen }}</p>
