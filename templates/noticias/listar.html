@@ -22,13 +22,6 @@
       
           <!-- ======= Blog Section ======= -->
 
-          {% if request.user.tipo_usuario == 'Colaborador' or request.user.is_superuser%}
-          <div class="">
-            <a href="{% url 'noticias:addnoticia' %}" class="btn-get-started">Añadir Noticia</a>
-          </div>
-          {%endif%}
-          
-          
           <div class="submenu ">
             <div class="d-flex align-items-center">
               <button class="btn btn-secondary">Categorías</button>
