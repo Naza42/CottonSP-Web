@@ -1,0 +1,21 @@
+body {
+    background-color: #222222 !important;
+  }
+
+  .carousel-item img{
+    object-fit: contain;
+    height: 300px;
+  }
+  /* Estilos para el carrusel */
+  @media (min-width: 1200px) {
+    .carousel-item img {
+      width: 100%;
+      
+    }
+  }
+  @media (min-width: 992px) {
+    .carousel-item img {
+      max-width: 100%;
+      
+    }
+  }
