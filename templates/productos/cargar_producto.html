@@ -17,35 +17,45 @@
                 <input type="text" class="form-control" id="titulo" name="titulo" required>
             </div>
             <div class="form-group">
-                <label for="resumen">Resumen:</label>
-                <textarea class="form-control" id="resumen" name="resumen" required></textarea>
-            </div>
-            <div class="form-group">
                 <label for="descripcion">Descripción:</label>
                 <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
             </div>
             <div class="form-group">
-                <label for="resumen_2">Resumen_2:</label>
-                <textarea class="form-control" id="resumen_2" name="resumen_2" required></textarea>
+                <label for="resumen">Resumen:</label>
+                <textarea class="form-control" id="resumen" name="resumen" required></textarea>
             </div>
             <div class="form-group">
-                <label for="resumen_2">Resumen_2:</label>
+                <label for="resumen_2">Resumen 2:</label>
                 <textarea class="form-control" id="resumen_2" name="resumen_2" required></textarea>
             </div>
             <div class="form-group">
                 <label for="imagen_principal">url:</label>
-                <input type="url" class="form-control-file" id="url" name="url" required>
+                <input type="url" class="form-control-file" id="url" name="url" >
+            </div>
+            <div class="form-group">
+                <label for="imagen_principal">Imagen Principal:</label>
+                <input type="file" class="form-control-file" id="imagen_principal" name="imagen_principal" required>
             </div>
             <div class="form-group">
                 <label for="imagen_2">Imagen 2:</label>
-                <input type="file" class="form-control-file" id="imagen_2" name="imagen_2" required>
+                <input type="file" class="form-control-file" id="imagen_2" name="imagen_2" >
             </div>
             <div class="form-group">
                 <label for="imagen_3">Imagen 3:</label>
-                <input type="file" class="form-control-file" id="imagen_3" name="imagen_3" required>
+                <input type="file" class="form-control-file" id="imagen_3" name="imagen_3" >
             </div>
             <button type="submit" class="btn btn-primary">Cargar Producto</button>
         </form>
     </div>
+    {% if form.errors %}
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ field.label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
 </section>
 {% endblock contenido%}
