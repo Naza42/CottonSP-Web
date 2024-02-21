@@ -15,7 +15,7 @@ class Noticia(models.Model):
     contenido = models.TextField()
     fecha_de_publicacion = models.DateTimeField(auto_now_add=True)
     #para imagen debemos instalar pillow
-    imagen = models.ImageField(upload_to= 'noticias')
+    imagen = models.ImageField(upload_to= 'noticias',default='../static/img/banner_productos1.png',blank= True)
     categoria_noticia = models.ForeignKey(Categoria, on_delete= models.CASCADE) #SET_NULL
     author = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     
