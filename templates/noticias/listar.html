@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block titulo %}NOTICIAS{% endblock titulo %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/listar.css' %}">
+{% endblock estilos %}
 {% block contenido %}
-<head>
-    <link rel="stylesheet" href="{% static 'css/listar.css' %}">
-
-</head>
-
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs">
             <div class="page-header d-flex align-items-center" style="background-image: url('');">
@@ -18,30 +16,29 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Breadcrumbs -->
-      
-          <!-- ======= Blog Section ======= -->
 
-          <div class="submenu ">
-            <div class="d-flex align-items-center">
-              <button class="btn btn-secondary">Categorías</button>
-              <div class="ml-2 movi">
-                <a href="{% url 'noticias:listar' %}" class="text-buttons text-decoration-none">Todas las noticias</a>
-                {% for cat in categorias %}
-                  <a class="text-decoration-none" href="?categoria={{ cat.pk }}">{{ cat.nombre }}</a>
+            <ol>
+              {% with categoria=request.GET.categoria %} 
+              
+              <li id="btn-categoria" class="fw-bolder"><span>Categorias</span></li>
+              <div id="categorias">
+              <a class="{% if not categoria %} select {% endif %}"  href="{% url 'noticias:listar' %}">Todos</a>
+              {% for cat in categorias %}
+                  <a                 
+                  {% if categoria ==  cat.pk|stringformat:'d' %}
+                  class="select"
+                  {% endif %}
+                                  
+                href="?categoria={{ cat.pk }}" >
+                {{ cat.nombre }}                  
+                </a>
                 {% endfor %}
+              {% endwith %}
               </div>
-            </div>
-          </div>
-          </div>
-          </div>
-
-          
-
-
-
+            </ol>
+          </div><!-- End Breadcrumbs -->
           <section id="blog" class="blog">
-            <div class="container" data-aos="fade-up">
+            <div class="container w-75" data-aos="fade-up">
         
                 <div class="row gy-4 posts-list">
                     {% for noti in noticias %}
@@ -84,8 +81,35 @@
       
             </div>
           </section><!-- End Blog Section -->
-
-
+           
+<script>
+  const btn = document.getElementById('btn-categoria')
+  btn.addEventListener('click',(e)=>{
+    const lista = document.getElementById('categorias')
+    if (lista.style.display == 'none' ){
+      lista.style.display = 'inherit';
+      btn.classList.remove('d-flex','w-100','justify-content-between','text-decoration-underline')
+      btn.lastChild.remove()
+    }else{
+      lista.style.display = 'none'
+      btn.appendChild(createSVG())
+      btn.classList.add('d-flex','w-100','justify-content-between','text-decoration-underline')
+    }
+  })
+  function createSVG(){
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "24");
+    svg.setAttribute("height", "24");
+    svg.setAttribute("fill", "#f0f0f0");
+    svg.setAttribute("class", "bi bi-arrow-down-square-fill text-primary");
+    svg.setAttribute("viewBox", "0 0 16 16");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0");
+    svg.appendChild(path);
+    return svg;
+  }
+</script>
 {% endblock contenido %}
 
 
