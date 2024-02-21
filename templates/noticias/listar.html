@@ -54,7 +54,7 @@
                                         {{ noti.titulo }}
                                     </h2>
                                     <div class="d-flex align-items-center">
-                                        <img src="{{ noti.autor.profile_picture.url }}" alt="" class="img-fluid post-author-img flex-shrink-0">
+                                        <img src="{{ noti.author.imagen.url }}" alt="" class="img-fluid post-author-img flex-shrink-0">
                                         <div class="post-meta">
                                             {% comment %} <p class="post-author-list">{{ noti.author }}</p> {% endcomment %}
                                             <p class="post-date">
@@ -102,7 +102,7 @@
     svg.setAttribute("width", "24");
     svg.setAttribute("height", "24");
     svg.setAttribute("fill", "#f0f0f0");
-    svg.setAttribute("class", "bi bi-arrow-down-square-fill text-primary");
+    svg.setAttribute("class", "bi bi-arrow-down-square-fill text-primary svg-cat");
     svg.setAttribute("viewBox", "0 0 16 16");
     var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0");
