@@ -1,9 +1,32 @@
+.cottonInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content:space-around;
+}
+
 .card{
     background-color: var(--cultured);
     color: var(--charcoal);
     max-width: 1320px;
     border: none;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+    transition: all 1s ease;
+    p {display: none;}
 }
+
+.card:hover{
+    transition: all 1s ease;
+    position: relative;
+    height: auto;
+    color: white;
+    padding: 1em;
+    p {display: block;}
+}
+
 .cotton{
     color: var(--charcoal);
     max-width: max-content;

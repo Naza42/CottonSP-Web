@@ -33,3 +33,6 @@ _pycache_/
 
 #de Visual
 .vscode
+
+#Entorno
+entorno/
