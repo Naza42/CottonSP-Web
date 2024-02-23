@@ -1,6 +1,6 @@
 .cottonInfo{
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: center;
     justify-content:space-around;
 }
@@ -13,18 +13,22 @@
     display: flex;
     width: 50%;
     flex-direction: column;
-    text-align: center;
-    transition: all 1s ease;
-    p {display: none;}
+    text-align: center;    
+    p {
+        visibility:collapse;
+        opacity: 0;
+        transition: visibility 3s,opacity 2s;}
 }
 
-.card:hover{
-    transition: all 1s ease;
+.card:hover{  
     position: relative;
     height: auto;
     color: white;
-    padding: 1em;
-    p {display: block;}
+    p {
+        visibility: visible;    
+        opacity: 1;
+        transition: visibility 3s,opacity 2s;
+    }
 }
 
 .cotton{
@@ -50,6 +54,18 @@ h3{
 @media (width <= 768px) {
     .cotton{
         text-align: center;
+    }
+    .cottonInfo{
+        display: block;
+    }
+    .card {
+        width: 75%;
+    }
+    .card p {
+        text-align: start;
+        visibility: visible;
+        opacity: 1;
+        text-align: start;
     }
 }
 
