@@ -144,7 +144,21 @@ a.btn-get-started {
   text-decoration: none;
 }
 
+.container{
+  animation: fadeIn 2s ease forwards;
 
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+    transform: translateX(-30px);
+  }50%{
+    transform: translateX(0);
+  }100%{
+    opacity: 1;
+    
+  }
+}
 .blog .blog-pagination {
   margin-top: 30px;
   color: #555555;
