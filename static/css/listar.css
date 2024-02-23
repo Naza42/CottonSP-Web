@@ -82,6 +82,14 @@ body{
 } 
 .select{
   color: #a07cc5 !important;
+  padding: 0 1.5rem;
+  background: #222;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  width: fit-content;
+}
+.select::before{
+  content: '@';
 }
 .breadcrumbs nav ol li+li {
   padding-left: 10px;
@@ -271,11 +279,15 @@ h2.title:hover{
     & #categorias{
       display: flex ;
       flex-wrap: wrap;
-      
+      margin-left: 1rem;
     } 
     & a{
       margin-top: 0;
       padding: 0 1rem ;
+    }
+    & .select{
+      width: fit-content;
+      margin: 0 1rem;
     }
   }
   .svg-cat{
@@ -293,6 +305,9 @@ h2.title:hover{
     & a{
       padding:  1rem 0;
     }
+    & .select{
+      padding: 0 1rem;
+    }
   }
 }
 @media (height <= 850px){
@@ -306,8 +321,7 @@ h2.title:hover{
     margin-left: 0;
     & a{
       margin-top: 1rem;
-      padding-left: 0;
-      padding-right: 1rem;
+      
     }
   }
   
