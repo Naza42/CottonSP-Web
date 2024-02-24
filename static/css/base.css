@@ -171,7 +171,18 @@
   ::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
   
   
-  
+  .w-102{
+    animation: filter 2s ease infinite;
+  }
+  @keyframes filter {
+    0%{
+      filter: drop-shadow(0 0 0.1rem #778384);
+    }50%{
+      filter: drop-shadow(0 0 1rem #778384);
+    }100%{
+      filter: drop-shadow(0 0 0.1rem #778384);
+    }
+  }
   
   
   /*-----------------------------------*\
