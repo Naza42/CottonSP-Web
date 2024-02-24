@@ -14,19 +14,19 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="titulo">Título:</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" required>
+                <input type="text" class="form-control" id="titulo" name="titulo" required maxlength="100">
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripción:</label>
-                <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="256"></textarea>
             </div>
             <div class="form-group">
                 <label for="resumen">Resumen:</label>
-                <textarea class="form-control" id="resumen" name="resumen" required></textarea>
+                <textarea class="form-control" id="resumen" name="resumen" maxlength="256" required></textarea>
             </div>
             <div class="form-group">
                 <label for="resumen_2">Resumen 2:</label>
-                <textarea class="form-control" id="resumen_2" name="resumen_2" required></textarea>
+                <textarea class="form-control" id="resumen_2" name="resumen_2" maxlength="256" ></textarea>
             </div>
             <div class="form-group">
                 <label for="imagen_principal">url:</label>
