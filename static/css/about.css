@@ -1,3 +1,9 @@
+.title{
+    font-size: 7rem;
+    margin-bottom: 5rem;
+    justify-content: center;
+    text-align: center;
+}
 .cottonInfo{
     display: flex;
     /*align-items: center;*/
@@ -14,6 +20,7 @@
     width: 50%;
     flex-direction: column;
     text-align: center;    
+    justify-content: space-between;
     p {
         visibility:collapse;
         opacity: 0;
@@ -71,6 +78,12 @@ h3{
 
 
 /* CottonAcademy */
+/*
+.divCotton:hover{
+    
+    background-color: #292927 !important;
+    transition: 3s background-color linear;
+}*/
 .cottonAC{
     color: var(--charcoal);
     max-width: max-content;
