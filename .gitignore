@@ -36,3 +36,12 @@ _pycache_/
 
 #Entorno
 entorno/
+
+#de Visual
+.vscode
+project_django/db.sqlite3
+project_django/db.sqlite3
+usuarios/migrations/__init__.py
+apps/productos/migrations/__init__.py
+apps/noticias/migrations/__init__.py
+.gitignore
