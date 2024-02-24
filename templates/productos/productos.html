@@ -71,18 +71,17 @@
         </div>
       </div>
       {% else %}
-      <div class="col-md-4">
+      <div class="col-12 col-lg-4 order-2">
         <div class="card-content" data-bs-reveal="left">
           <h2 class="card-tag" style="color: #a07cc5">{{ producto.titulo }}</h2>
-          <h4 class="h3 card-title" style="color: #7cb798;">{{ producto.resumen_2 }}</h4>
-          <p class="card-text" style="color: #fbf9fd;">{{ producto.resumen }}</p>
+          <p class="card-text" style="color: #fbf9fd;">{{ producto.resumen}}</p>
           <a href="{% url 'detalle_producto' producto.id %}" class="btn-text" style="color: #a07cc5;">
             <span class="span">Ver Detalles</span>
             <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </a>
         </div>
       </div>
-      <div class="col-md-4 order-md-1">
+      <div class="col-12 col-lg-4 order-2">
         <div id="carouselExampleControls_{{ forloop.counter }}" class="carousel slide"data-bs-reveal="rigth"  data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -97,11 +96,11 @@
               </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls_{{ forloop.counter }}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Anterior</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls_{{ forloop.counter }}" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Siguiente</span>
           </button>
         </div>
       </div>
@@ -109,6 +108,4 @@
     </div>
   </div>
   {% endfor %}
-
-
 {% endblock contenido %}

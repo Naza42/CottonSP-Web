@@ -22,7 +22,7 @@
             <div>
                 <h5 class="fw-semibold mb-5  pb-1"> Que Ofrecemos </h5>
                 <p class="text-white fw-medium lh-lg">
-                    {{ producto.resumen|capfirst  }}                
+                    {{ producto.descripcion|capfirst  }}                
                 </p>
             </div>
             <div class='d-flex'>
@@ -93,4 +93,8 @@
         </a>
     </div>
 </div>
+
+<a href="{% url 'editar_producto' producto.id %}" class="btn btn-primary">Editar</a>
+<a href="{% url 'eliminar_producto' producto.id %}" class="btn btn-danger">Eliminar</a>
+
 {% endblock contenido %}
