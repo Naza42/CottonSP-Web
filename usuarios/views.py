@@ -5,7 +5,7 @@ from django.views.generic import CreateView
 from .forms import RegistroForm
 from django.urls import reverse_lazy
 from .models import Usuario
-
+from django.contrib.auth.decorators import login_required
 # Vista para el inicio de sesión
 def user_login(request):
     if request.method == 'POST':
@@ -34,10 +34,7 @@ class Registro(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'usuarios/registro.html'
 
-# admin_panel/views.py
-from django.shortcuts import render
-from django.contrib.auth.models import User
-
+@login_required
 def admin_panel(request):
     users = Usuario.objects.all()
     return render(request, 'usuarios/admin_panel.html', {'users': users})
