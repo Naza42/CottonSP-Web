@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Iniciar el avance automático cada 1 minuto
   setInterval(function() {
     siguienteTarjeta();
-  }, 10000);  // 60000 milisegundos = 1 minuto
+  }, 15000);  // 60000 milisegundos = 1 minuto
 });
 
 let currentIndex = 0;
