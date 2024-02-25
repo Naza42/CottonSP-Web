@@ -5,48 +5,44 @@
     text-align: center;
 }
 .cottonInfo{
+    max-width: 1320px;
     display: flex;
     /*align-items: center;*/
-    justify-content: center;
-    justify-content:space-around;
+    margin: 0 auto;
 }
 
 .card{
     background-color: var(--cultured);
     color: var(--charcoal);
-    max-width: 1320px;
     border: none;
     display: flex;
-    width: 50%;
-    flex-direction: column;
-    text-align: center;    
-    justify-content: space-between;
+    /*
     p {
         visibility:collapse;
         opacity: 0;
-        transition: visibility 3s,opacity 2s;}
+        transition: visibility 3s,opacity 2s;}*/
 }
 
 .card:hover{  
     position: relative;
     height: auto;
     color: white;
+    /*
     p {
         visibility: visible;    
         opacity: 1;
         transition: visibility 3s,opacity 2s;
-    }
+    }*/
 }
 
 .cotton{
-    color: var(--charcoal);
     max-width: max-content;
     font-size: xxx-large !important;
     margin-bottom: 5rem;
+    color: white;
 }
-.cotton:hover{
-    color: var(--cinnamon-satin)
-}
+
+
 
 h3{
     margin-top: 3rem;
@@ -57,10 +53,64 @@ h3{
 .card-img{
     max-height: 25rem;
     object-fit: contain;
+    -webkit-filter: grayscale(100%);
+    filter:grayscale(100%);
+}
+.cottonSP, .cottonAC{
+    & p{
+        color: white;
+    }
+    & .span_gradient{
+        color: white;
+        transition: color 1s linear;
+        -webkit-text-fill-color:unset;
+    }
+    & .card{
+        
+        & img{
+            transition: filter 1s linear ; 
+            filter: grayscale(100%) drop-shadow(0 0 0rem #778384) blur(10px);
+        }
+   }
+}
+.linkcottonAC , .cottonAC_color, .cotton{
+    transition: color 1s linear ;
+}
+.cottonSP:hover{
+     
+    .card{        
+        
+        & img{
+            filter: grayscale(0%) drop-shadow(0 0 1rem #778384) blur(0px);
+        }
+    }
+    & .cotton{
+        color: var(--cinnamon-satin)
+    }
+    & .span_gradient{
+        color: var(--cinnamon-satin);
+    }
+
+}
+
+.cottonAC:hover {
+    .card{
+        & img{
+            filter: grayscale(0%) drop-shadow(0 0 1rem #778384) blur(0px);
+        }
+    }
+    & .linkcottonAC{
+        color: #2FCBEB;
+    }
+    & .cottonAC_color{
+        color: #2FCBEB;
+    }
 }
 @media (width <= 768px) {
     .cotton{
         text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 0;
     }
     .cottonInfo{
         display: block;
@@ -74,6 +124,25 @@ h3{
         opacity: 1;
         text-align: start;
     }
+    .card-img{
+        filter: none;
+    }
+    .span_gradient{
+        -webkit-text-fill-color: transparent;
+    }
+    .cottonSP{
+        .cotton{
+            color: var(--cinnamon-satin)
+        }
+    }
+    .cottonAC{
+        .cotton{
+            color: #2FCBEB;
+        }
+    }
+    .cottonAC_color{
+        color: #2FCBEB;
+    }
 }
 
 
@@ -84,20 +153,6 @@ h3{
     background-color: #292927 !important;
     transition: 3s background-color linear;
 }*/
-.cottonAC{
-    color: var(--charcoal);
-    max-width: max-content;
-    font-size: xxx-large !important;
-    margin-bottom: 2rem;
-}
-
-.cottonAC:hover{
-    color: #2FCBEB;
-}
-
-.cottonAC_color{
-    color: #2FCBEB;
-}
 
 /* .equipo {
     display: flex;

@@ -10,16 +10,12 @@
 {% block contenido %}
     <section class="section hero">
       <h1 class=" title">¿Quienes Somos?</h1>
-      <div class="cottonInfo">
-        
-        <div class="card  mx-auto" >
-          <h1 class="mx-auto d-flex cotton">Cotton SP</h1>
-            <div >
-              <div >
+        <div class="cottonInfo row cottonSP">
+            <div class="card mx-auto col-12 col-lg-6 justify-content-end" >
                 <img src="{% static 'img/hero-banner.jpg' %}" class="card-img" alt="...">
-              </div>
-              <div >
-                <div >                  
+            </div>
+            <div class="col-12 col-lg-6">    
+                  <h1 class="d-flex cotton">Cotton SP</h1>              
                   <p class="card-text fw-semibold"><span class="span_gradient" style="display: inline-block">Cotton SP</span> es una marca que se enfoca en desarrollar 
                     <span class="span_gradient" style="display: inline-block"> soluciones de software de alta calidad </span> e innovadoras de manera sostenible, 
                     con el propósito de mejorar la <span class="span_gradient" style="display: inline-block">calidad de vida y contribuir al bienestar social.</span>
@@ -30,36 +26,32 @@
                     <span class="span_gradient" style="display: inline-block">flexibilidad y la adaptabilidad</span>. 
                     Permitiéndo ofrecer soluciones personalizadas y ajustadas a las necesidades específicas de cada cliente.                
                     </p>
-                </div>
-              </div>
             </div>
-          </div>
+        
+        </div>
 
-          
-        <div class="card  mx-auto divCotton" >
-          <h1 class="mx-auto d-flex cottonAC">
-            <a class="cottonAC" href="https://www.cottonacademy.com/">Cotton Academy</a>
-          </h1 >
-            <div>
-              <div>
+        <div class="cottonInfo row mt-5  cottonAC d-flex">  
+        <div class=" mx-auto col-12 col-lg-6 justify-content-end order-2 order-md-1" >
+          <div class="card-body m-0 p-0"> 
+            <h1 class="d-flex ">
+              <a class="cotton linkcottonAC" href="https://www.cottonacademy.com/">Cotton Academy</a>
+            </h1 >              
+            <p class="card-text fw-semibold"><span class="cottonAC_color" style="display: inline-block">En Cotton Academy</span>, 
+              nos apasiona impulsar el talento y la innovación desde sus raíces. Como parte del programa Innova, nos dedicamos a 
+              formar a individuos desde cero, brindándoles las habilidades necesarias para triunfar en el exigente mundo laboral de hoy.
+              <br>
+              Nuestro bootcamp no se trata solo de aprender a programar, sino de aprender a pensar de manera crítica y creativa. 
+              En <span class="cottonAC_color" style="display: inline-block">Cotton Academy</span>, 
+              cada línea de código que escribimos es una oportunidad para desarrollar habilidades analíticas y resolver problemas de 
+              manera eficiente.               
+              </p>
+          </div>
+        </div>
+          <div class="card mx-auto col-12 col-lg-6 justify-content-end order-1 order-md-2" >
                 <a href="https://www.cottonacademy.com/">
-                    <img src="{% static 'img/CottonAcademy.svg' %}" class="card-img" alt="...">
+                    <img src="{% static 'img/CottonAcademy.svg' %}"  class="card-img" alt="...">
                   </a>
               </div>
-              <div>
-                <div class="card-body m-0 p-0">                  
-                  <p class="card-text fw-semibold"><span class="cottonAC_color" style="display: inline-block">En Cotton Academy</span>, 
-                    nos apasiona impulsar el talento y la innovación desde sus raíces. Como parte del programa Innova, nos dedicamos a 
-                    formar a individuos desde cero, brindándoles las habilidades necesarias para triunfar en el exigente mundo laboral de hoy.
-                    <br>
-                    Nuestro bootcamp no se trata solo de aprender a programar, sino de aprender a pensar de manera crítica y creativa. 
-                    En <span class="cottonAC_color" style="display: inline-block">Cotton Academy</span>, 
-                    cada línea de código que escribimos es una oportunidad para desarrollar habilidades analíticas y resolver problemas de 
-                    manera eficiente.               
-                    </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
     </section>
