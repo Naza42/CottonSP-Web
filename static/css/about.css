@@ -153,3 +153,86 @@ h3{
     background-color: #292927 !important;
     transition: 3s background-color linear;
 }*/
+
+/* .equipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: #2FCBEB;
+}
+
+.tarjetas {
+    display: flex;   
+    background-color: aquamarine; 
+}
+
+.tarjeta {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 35%;
+    border: 1px solid black;
+    margin: 1em;
+    padding: 1em;
+    background-color: brown;
+}
+
+.tarjetaInfo{
+    background-color:black;
+} */
+
+#tarjetasCarrusel {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .tarjetas-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .tarjeta {
+    flex: 0 0 45%;
+    box-sizing: border-box;
+    margin: 0 2.5%;
+    border: 1px solid #180505;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(151, 94, 25);
+  }
+  
+  .tarjeta img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .tarjeta .contenido {
+    padding: 20px;
+  }
+
+  .boxBTN {
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+  }
+
+  .btnCarousel{
+    display: flex;
+    width: 50%;
+  }
+
+  .siguiente {
+    color: white;
+    width: 50%;
+    margin: 1em;
+    border: 1px solid white;
+  }
+
+  .anterior {
+    color: white;
+    width: 50%;
+    margin: 1em;
+    border: 1px solid white;
+  }

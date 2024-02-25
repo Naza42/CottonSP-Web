@@ -4,6 +4,7 @@
 {% block estilos %}
 <link rel="stylesheet" href='{% static "css/about.css" %}'>
 
+
 {% endblock estilos %}
 
 {% block contenido %}
@@ -56,50 +57,75 @@
     </section>
     
 
-
-    <section>
-        <h3 class="mx-auto d-flex text-center">Nuestro Equipo</h3>
-        <div class=" row w-75 mx-auto justify-content-around">            
-            <div class=" card col-md-3 bg-transparent border-0 m-2">
-                <img src="{% static 'img/equipo/lucas.jpg' %}"
-                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
-                <div class="card-body">
-                    <h5 class="card-title">NOMBRE</h5>
-                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
-                        Desarrollo de Software</p>
-                    <div class="text-center">
-                        <a href="" class="btn btn-primary"><img
-                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
-                    </div>
-                </div>
-            </div>
-            <div class=" card col-md-3 bg-transparent border-0 m-2">
-                <img src="{% static 'img/equipo/' %}"
-                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
-                <div class="card-body">
-                    <h5 class="card-title">NOMBRE</h5>
-                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
-                        Desarrollo de Software</p>
-                    <div class="text-center">
-                        <a href="" class="btn btn-primary"><img
-                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
-                    </div>
-                </div>
-            </div>
-            <div class=" card col-md-3 bg-transparent border-0 m-2">
-                <img src="{% static 'img/equipo/' %}"
-                    class="object-fit-cover card-img-top img-fluid rounded-circle bg-secondary" alt="..." height="540px" width="540px" >
-                <div class="card-body">
-                    <h5 class="card-title">NOMBRE</h5>
-                    <p class="card-text">Desarrollador Full Stack. Actualmente trabajando en
-                        Desarrollo de Software</p>
-                    <div class="text-center">
-                        <a href="" class="btn btn-primary"><img
-                                src="{% static 'img/linkedin.svg' %}" alt=""> </a>                        
-                    </div>
-                </div>
-            </div>            
-        </div>
+    <section class="section hero">
+      <div id="tarjetasCarrusel">
+        <div class="tarjetas-wrapper">
         
+          <!-- Tarjeta 1 -->
+          <div class="tarjeta">
+            <img src="imagen1.jpg" alt="Imagen 1">
+            <div class="contenido">
+              <h3>Título 1</h3>
+              <p>Contenido de la tarjeta 1.</p>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 2 -->
+          <div class="tarjeta">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <div class="contenido">
+              <h3>Título 2</h3>
+              <p>Contenido de la tarjeta 2.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="tarjeta">
+            <img src="imagen3.jpg" alt="Imagen 3">
+            <div class="contenido">
+              <h3>Título 3</h3>
+              <p>Contenido de la tarjeta 3.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="tarjeta">
+            <img src="imagen4.jpg" alt="Imagen 4">
+            <div class="contenido">
+              <h3>Título 4</h3>
+              <p>Contenido de la tarjeta 4.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 5 -->
+          <div class="tarjeta">
+            <img src="imagen5.jpg" alt="Imagen 5">
+            <div class="contenido">
+              <h3>Título 5</h3>
+              <p>Contenido de la tarjeta 5.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6 -->
+          <div class="tarjeta">
+            <img src="imagen6.jpg" alt="Imagen 6">
+            <div class="contenido">
+              <h3>Título 6</h3>
+              <p>Contenido de la tarjeta 6.</p>
+            </div>
+          </div>
+      
+          <!-- Agrega más tarjetas según sea necesario -->
+        </div>
+        <div class="boxBTN">
+        <div class="btnCarousel">
+          <button class="anterior">Anterior</button>
+          <button class="siguiente">siguiente</button>
+        </div>
+      </div>
+      </div>
+
     </section>
+
+    <script src="{% static 'js/carousel.js' %}"></script>
 {% endblock contenido %}
