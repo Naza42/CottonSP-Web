@@ -27,7 +27,8 @@ function mostrarTarjetas(index) {
 }
 
 function siguienteTarjeta() {
-  if (currentIndex < (tarjetas.length/2) - 1) {
+  const tarjetasVisibles = window.innerWidth <= 768 ? 1 : 2; // Ajusta según tus necesidades
+  if (currentIndex < (tarjetas.length - 1) / tarjetasVisibles) {
     currentIndex++;
   } else {
     currentIndex = 0;
@@ -36,10 +37,12 @@ function siguienteTarjeta() {
 }
 
 function anteriorTarjeta() {
+  const tarjetasVisibles = window.innerWidth <= 768 ? 1 : 2; // Ajusta según tus necesidades
   if (currentIndex > 0) {
     currentIndex--;
   } else {
-    currentIndex = (tarjetas.length/2) - 1;
+    currentIndex = (tarjetas.length - 1) / tarjetasVisibles;
   }
   mostrarTarjetas(currentIndex);
 }
+
