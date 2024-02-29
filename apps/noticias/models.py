@@ -11,7 +11,7 @@ class Categoria(models.Model):
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=250)
-    resumen = models.CharField(max_length=100)
+    resumen = models.CharField(max_length=450)
     contenido = models.TextField()
     fecha_de_publicacion = models.DateTimeField(auto_now_add=True)
     #para imagen debemos instalar pillow

@@ -1,18 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block titulo %}DETALLE{% endblock titulo %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/detalle.css' %}">
+{% endblock estilos %}
 {% block contenido %}
 
-    <head>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'css/detalle.css' %}">
-        <!-- Vendor CSS Files -->
-        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-        <link href="vendor/aos/aos.css" rel="stylesheet">
-        <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-        <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-    </head>
+    
 
 <section>
 
@@ -34,7 +28,7 @@
   
           <div class="row g-5">
   
-            <div class="col-lg-8">
+            <div class="col-lg-14">
   
               <article class="blog-details">
   
@@ -53,7 +47,7 @@
   
                 <div class="content">
                   <p>
-                    {{ noticia.contenido }}
+                    {{ noticia.contenido|linebreaksbr }}
                   </p>
                 </div><!-- End post content -->
   
