@@ -46,12 +46,12 @@
                             <a href="{% url 'noticias:detalle' noti.pk %}" class="article-link title text-decoration-none" >  <article>
                                     <div class="post-img">
                                         {% if noti.imagen %}
-                                            <img src="{{ noti.imagen.url }}" alt="" class="img-fluid">
+                                            <img src="{{ noti.imagen.url }}" alt="" class="img-fluid" loading="lazy">
                                         {% endif %}
                                     </div>
                                     <p class="post-category">{{ noti.categoria_noticia }}</p>
                                     <h2 class="title" >
-                                        {{ noti.titulo }}
+                                        {{ noti.titulo|truncatechars:25 }}
                                     </h2>
                                     <div class="d-flex align-items-center">
                                         <img src="{{ noti.author.imagen.url }}" alt="" class="img-fluid post-author-img flex-shrink-0">
@@ -71,16 +71,7 @@
                 </div>
             </div>
         
-            <div class="blog-pagination">
-                <ul class="justify-content-center">
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                </ul>
-              </div><!-- End blog pagination -->
-      
-            </div>
-          </section><!-- End Blog Section -->
+<!-- End Blog Section -->
            
 <script>
   const btn = document.getElementById('btn-categoria')

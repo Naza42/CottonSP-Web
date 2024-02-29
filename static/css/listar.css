@@ -53,7 +53,7 @@ body{
   font-weight: 600;
   color: var(--color-default);
   animation: showcomment 1s ease forwards ;
-  bottom: 5rem;
+  /*bottom: 5rem;*/
 }
 #btn-categoria{
   cursor: pointer;
@@ -201,7 +201,7 @@ a.btn-get-started {
 # Blog Posts List
 --------------------------------------------------------------*/
 .blog .posts-list article {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(245, 240, 240, 0.1);
   padding: 30px;
   height: 100%;
   border-radius: 10px;

@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .models import Noticia, Categoria, Comment, Usuario
 from django.views.generic.list import ListView #para las vistas clases
-from .forms import NoticiaForm, CommentForm
+from .forms import NoticiaForm, CommentForm, CategoriaForm
 from django.http import HttpResponseForbidden
 from django.contrib import messages
 
@@ -182,8 +182,25 @@ def EditNoticia(request, pk):
         'form': form,
     }
     return render(request, 'noticias/editNoticia.html', context)
+@login_required
+def delete_noticia(request, pk):
+    print("ENRA")
+    noticia = get_object_or_404(Noticia, pk=pk)
+    if request.method == 'POST':
+        noticia.delete()
+        return redirect('admin_panel')
+    return render(request, 'noticias/eliminarNoticia.html', {'noticia': noticia})
 
-
-
+def add_categoria(request):
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST, request.FILES) 
+        if form.is_valid():
+            categoria = form.save(commit=False)
+            categoria.save()
+            return redirect('admin_panel')
+    else:
+        form = CategoriaForm()
+    
+    return render(request, 'noticias/addCategoria.html', {'form': form})
 
 
