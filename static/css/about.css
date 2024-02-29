@@ -233,8 +233,10 @@ h3{
         opacity: 1;
         text-align: start;
     }
-    .card-img{
-        filter: none;
+    .cottonSP, .cottonAC {
+        & .card img{
+            filter: none;
+        }
     }
     .span_gradient{
         -webkit-text-fill-color: transparent;
