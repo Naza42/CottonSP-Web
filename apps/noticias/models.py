@@ -1,5 +1,6 @@
 from django.db import models
 from usuarios.models import Usuario
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Categoria(models.Model):
@@ -11,8 +12,9 @@ class Categoria(models.Model):
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=250)
-    resumen = models.CharField(max_length=100)
-    contenido = models.TextField()
+    resumen = models.CharField(max_length=450)
+    # contenido = models.TextField()
+    contenido = RichTextField()
     fecha_de_publicacion = models.DateTimeField(auto_now_add=True)
     #para imagen debemos instalar pillow
     imagen = models.ImageField(upload_to= 'noticias',default='../static/img/banner_productos1.png',blank= True)

@@ -22,38 +22,8 @@
         <h2>Cargar Nuevo Producto</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="titulo">Título:</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" required maxlength="100">
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="256"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="resumen">Resumen:</label>
-                <textarea class="form-control" id="resumen" name="resumen" maxlength="256" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="resumen_2">Resumen 2:</label>
-                <textarea class="form-control" id="resumen_2" name="resumen_2" maxlength="256" ></textarea>
-            </div>
-            <div class="form-group">
-                <label for="imagen_principal">url:</label>
-                <input type="url" class="form-control-file" id="url" name="url" >
-            </div>
-            <div class="form-group">
-                <label for="imagen_principal">Imagen Principal:</label>
-                <input type="file" class="form-control-file" id="imagen_principal" name="imagen_principal" required>
-            </div>
-            <div class="form-group">
-                <label for="imagen_2">Imagen 2:</label>
-                <input type="file" class="form-control-file" id="imagen_2" name="imagen_2" >
-            </div>
-            <div class="form-group">
-                <label for="imagen_3">Imagen 3:</label>
-                <input type="file" class="form-control-file" id="imagen_3" name="imagen_3" >
-            </div>
+            {{ form.media }}
+                        {{ form.as_p }}
             <br>
             <button type="submit" class="btn btn-primary">Cargar</button>
             <a href="{% url 'admin_panel' %}" class="btn btn-secondary">Cancelar</a>

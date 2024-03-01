@@ -7,14 +7,15 @@
 
 {% block contenido %}   
 <section class="hero">
-    <div class="container d-block ">
+    <div class=" ">
 <h1>Editar producto</h1>
 <div class="container">
 <form action="{% url 'editar_producto' producto.id %}" method="post" enctype="multipart/form-data">
   {% csrf_token %}
-  {{ form.as_div }}
+  {{ form.media }}
+  {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Guardar</button>
-  <a href="{% url 'admin_panel'  %}" class="btn btn-secondary">Cancelar</a>
+  <a href="{% url 'detalle_producto' producto.id %}" class="btn btn-secondary">Cancelar</a>
 </form>
 </div>
 </div>

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.contacto',
     'apps.productos',
     'django_bootstrap5',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
