@@ -184,7 +184,6 @@ def EditNoticia(request, pk):
     return render(request, 'noticias/editNoticia.html', context)
 @login_required
 def delete_noticia(request, pk):
-    print("ENRA")
     noticia = get_object_or_404(Noticia, pk=pk)
     if request.method == 'POST':
         noticia.delete()
