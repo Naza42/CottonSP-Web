@@ -8,7 +8,7 @@
     <div class="container ">
         <h1 class='text-center fw-bold '><span>{{ producto.titulo }}</span></h1>
         <div class="card border-0 card-bg">
-            <img class="card-img-top rounded" src="{{ producto.imagen_principal.url }}" alt="{{ producto.titulo }}">            
+            <img class="card-img-top rounded" src="{{ producto.imagen_principal.url }}" alt="{{ producto.titulo }}" loading="lazy">            
         </div> 
     </div>
 </section>
@@ -16,7 +16,7 @@
 <section class="section border-top-1">
     <div class="row section-2 mx-auto w-100 flex-column-reverse flex-lg-row p-5" data-reveal='left' data-reveal-delay='0.3s'>        
         <div class="col-12 col-lg-6 p-0">            
-            <img class="img-fluid rounded" src="{{ producto.imagen_2.url }}" alt="" srcset="" >            
+            <img class="img-fluid rounded" src="{{ producto.imagen_2.url }}" alt="" srcset="" loading="lazy" >            
         </div>
         <div class="col-12 col-lg-6 ps-5 d-flex flex-column justify-content-between">
             <div>
@@ -69,6 +69,7 @@
             src="{{ producto.imagen_3.url }}"
             class="img-fluid rounded-top col-12 col-lg-4 d-none d-lg-block"
             alt=""
+            loading="lazy"
             />        
         </div>
     </div>

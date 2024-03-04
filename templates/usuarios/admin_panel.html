@@ -16,7 +16,7 @@
             </h1>
             <div class="flex-shrink-0 dropdown text-center">
               <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{ user.imagen.url }}" alt="mdo" width="32" height="32" class="rounded-circle">
+                <img src="{{ user.imagen.url }}" alt="mdo" width="32" height="32" class="rounded-circle" loading="lazy">
               </a>
               <ul class="dropdown-menu text-small shadow" style="">
                 <li><a class="dropdown-item" href="{% url "logout" %}">Cerrar Sesion</a></li>
@@ -135,7 +135,7 @@
                     <tr>
                         <th scope="col">Titulo</th>
                         <th scope="col">Descripcion</th>
-                        <th scope="col">Imagen</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -145,13 +145,7 @@
                     <td scope="row">{{ producto.titulo|truncatechars:50 }}</td>
                     <td>{{ producto.descripcion|truncatechars:50 }}</td>
                     <td>
-                        <img
-                            src="{{ producto.imagen_principal.url }}"
-                            class="img-fluid rounded-top"
-                            alt=""
-                            style='height: 100px;
-                            object-fit: cover;'
-                        />
+                        {{ producto.categoria }}
                         
                     </td>
                     <td>
