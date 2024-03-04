@@ -129,7 +129,7 @@ h3{
   .tarjeta {
     flex: 0 0 25%;
     box-sizing: border-box;
-    flex-direction: column;
+    
     margin: 1em 4.166%;
     padding: 1.5em;
     border: 1px solid black;
@@ -192,16 +192,23 @@ h3{
 
   .boxBTN {
     display: flex;
-    justify-content:space-around;
     width: 100%;
     height: 5em;
   }
 
   .btnCarousel{
     display: flex;
-    width: 80%;
+    width: 50%;
     justify-content:space-around;
-    button:hover{cursor: pointer;transform: scale(1.1);}
+    margin: auto;
+    button{
+        img{
+            max-height: 48px;
+        }
+    }
+    button:hover{cursor: pointer;transform: scale(1.1);
+    
+    }
   }
 
   .siguiente {
@@ -215,6 +222,142 @@ h3{
     height: 100%;
     img{width: auto; height: 100%;}
   }
+  .test {
+    flex: 0 0 25%;
+    background-color: #292927;
+    margin: 1em 4.166%;
+    padding: 1.5em;
+    transition: box-shadow .3s ease, transform .2s ease;
+    border-radius: 1rem;
+    box-shadow: 0 0px 6px rgba(245, 240, 240, 0.1);
+   }
+   
+   .test-info {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    transition: transform .2s ease, opacity .2s ease;
+   }
+   
+   /*Image*/
+   .test-avatar {
+    background: linear-gradient(to right, #bfbaaf 0%, #919191 100%);
+    /*
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);*/
+    border-radius: 50%;
+    transition: transform .2s ease;
+    width: 45%;
+    height: auto;
+   }
+   
+   
+   /*Card footer*/
+   .test-social {
+    transform: translateY(200%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    opacity: 0;
+    transition: transform .2s ease, opacity .2s ease;
+    padding-bottom: 1rem;
+   }
+   
+   .test-social__item {
+    list-style: none;
+    .group {
+        position: relative;
+      }
+      .group a svg {
+        display: block;
+        height: 48px;
+        width: 48px;
+        fill: #515F65;
+        cursor: pointer;
+        transition: fill 0.2s ease ,transform 0.2s ease;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .group a:hover svg {
+        transform: scale(1.25);
+        fill: #3513ad;
+      }
+      
+      .group span {
+        position: absolute;
+        top: -4rem;
+        opacity: 0;
+        z-index: -20;
+        right:5px;
+        transform-origin: left;
+        padding:0.75rem;
+        border-radius: 0.375rem;
+        border: 1px solid #d1d5db;
+        background-color: #ffffff;
+        color: #000;
+        font-size: 0.875rem;
+        font-weight: bolder;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0.5rem 1rem -0.125rem rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        transform: scale(0);
+        transform: translateX(-50%);
+        white-space: nowrap;
+      }
+      
+      .group:hover span {
+        transform: scale(1);
+        opacity: 1;
+      }
+      
+   }
+   
+   .test-social__item svg {
+    display: block;
+    height: 24px;
+    width: 24px;
+    fill: #515F65;
+    cursor: pointer;
+    transition: fill 0.2s ease ,transform 0.2s ease;
+   }
+   
+   /*Text*/
+   .test-title {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2rem;
+   }
+   
+   .test-subtitle {
+    color: #859ba8;
+    font-size: 0.8em;
+   }
+   
+   /*Hover*/
+   .test:hover {
+    box-shadow: 1px 1px 10px 5px rgba(245, 240, 240, 0.1);
+   }
+   
+   .test:hover .test-info {
+    transform: translateY(-5%);
+    font-weight: bold;
+   }
+   
+   .test:hover .test-social {
+    transform: translateY(100%);
+    opacity: 1;
+   }
+   
+   .test-social__item svg:hover {
+    fill: #3513ad;
+    transform: scale(1.1);
+   }
+   
+   .card-avatar:hover {
+    transform: scale(1.1);
+   }
 
   @media (max-width: 768px) {
     .cotton{
@@ -234,8 +377,10 @@ h3{
         opacity: 1;
         text-align: start;
     }
-    .card-img{
-        filter: none;
+    .cottonSP, .cottonAC {
+        & .card img{
+            filter: none;
+        }
     }
     .span_gradient{
         -webkit-text-fill-color: transparent;
@@ -256,10 +401,25 @@ h3{
     .tarjeta {
         display: flex;
         flex: 0 0 90%;
-        flex-direction: column;
+        
         justify-content: center;
         align-items: center;
         padding: 1em;
         margin: 1em 5%;
+    }
+    .test {
+        flex: 0 0 90% !important;
+        padding: 1em;
+        margin: 1em 5%;
+        .test-info div{
+            padding-left: 4rem;
+        }
+        .test-social {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+        .test-social__item .group svg {
+            fill: #431bd4;
+        }
     }
 }

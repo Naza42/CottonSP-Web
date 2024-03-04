@@ -9,11 +9,11 @@
 <section class="hero">
     <div class="text-center">
 
-<h1>Eliminar producto</h1>
+<h1>Eliminar Noticias</h1>
 
-<p>¿Estás seguro de que quieres eliminar el producto "{{ producto.titulo }}"? Esta acción no se puede deshacer.</p>
+<p>¿Estás seguro de que quieres eliminar el producto "{{ noticia.titulo }}"? Esta acción no se puede deshacer.</p>
 
-<form action="{% url 'eliminar_producto' producto.id %}" method="post">
+<form action="{% url 'noticias:eliminar_noticia' noticia.id %}" method="post">
   {% csrf_token %}
   <button type="submit" class="btn btn-danger">Eliminar</button>
   <a href="{% url 'admin_panel' %}" class="btn btn-secondary">Cancelar</a>

@@ -8,7 +8,17 @@
 
 {% block contenido %}
 <section class="section hero">
-    <div class="container">
+    <div class="container d-block">
+        {% if form.errors %}
+        <ul class='p-0' >
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         <h2>Cargar Nuevo Producto</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -16,17 +26,9 @@
                         {{ form.as_p }}
             <br>
             <button type="submit" class="btn btn-primary">Cargar</button>
+            <a href="{% url 'admin_panel' %}" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
-    {% if form.errors %}
-        <ul>
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <li>{{ field.label }}: {{ error }}</li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    {% endif %}
-
+    
 </section>
 {% endblock contenido%}

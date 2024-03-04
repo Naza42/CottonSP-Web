@@ -5,6 +5,8 @@ from django.views.generic import CreateView
 from .forms import RegistroForm
 from django.urls import reverse_lazy
 from .models import Usuario
+from apps.noticias.models import Noticia
+from apps.productos.models import Producto
 from django.contrib.auth.decorators import login_required
 # Vista para el inicio de sesión
 def user_login(request):
@@ -37,5 +39,7 @@ class Registro(CreateView):
 @login_required
 def admin_panel(request):
     users = Usuario.objects.all()
-    return render(request, 'usuarios/admin_panel.html', {'users': users})
+    noticias = Noticia.objects.all()
+    productos= Producto.objects.all()
+    return render(request, 'usuarios/admin_panel.html', {'users': users,'noticias':noticias,'productos': productos})
 

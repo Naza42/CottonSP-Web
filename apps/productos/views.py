@@ -28,7 +28,7 @@ def eliminar_producto(request, producto_id):
     
     if request.method == 'POST':
         producto.delete()
-        return redirect('lista_productos')
+        return redirect('admin_panel')
     
     return render(request, 'productos/eliminar_producto.html', {'producto': producto})
 

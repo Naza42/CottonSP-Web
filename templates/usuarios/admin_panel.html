@@ -7,20 +7,178 @@
 <link rel="stylesheet" href="{% static 'css/admin_panel.css' %}">
 {% block contenido %}
 <section class="section hero">
-    <body>
-        <h1>Admin Panel</h1>
-        <h2>Lista de Usuarios</h2>
-        <ul>
-            {% for user in users %}
-                <li>{{ user.username }}</li>
-            {% endfor %}
-        </ul>
-        <!-- Otros elementos del panel de administrador -->
-        <div>
-            <a class="btn"  href="{% url 'noticias:addnoticia' %}">Subir Noticias</a>
-            <a class="btn" href="{% url 'cargar_producto' %}">Subir Productos</a>
+    <header class="py-3 mb-3 border-bottom w-75 mx-auto">
+        <div class="container-fluid d-grid gap-3 align-items-center" >
+        <div class='w-100'></div>
+          <div class="d-flex align-items-center">
+            <h1 class="w-100 me-3 text-center" >
+              Admin Panel
+            </h1>
+            <div class="flex-shrink-0 dropdown text-center">
+              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ user.imagen.url }}" alt="mdo" width="32" height="32" class="rounded-circle" loading="lazy">
+              </a>
+              <ul class="dropdown-menu text-small shadow" style="">
+                <li><a class="dropdown-item" href="{% url "logout" %}">Cerrar Sesion</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </body>
+      </header>
+    
+        <h2 class='w-75 text-start mx-auto fw-bolder text-white mt-5'>Lista de Usuarios</h2>
+        <div
+            class="table-responsive-sm w-75 mx-auto rounded" 
+        >
+            <table
+                class="table table-dark rounded"
+            >
+                <thead>
+                    <caption class='fw-bolder text-white'>Total {{ users|length }}</caption>
+                    <tr>
+                        <th scope="col">Nombre de Usuario</th>
+                        <th scope="col">Ultima vez </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr class="">
+                    <td scope="row">{{ user.username }}</td>
+                    <td>{{ user.last_login }}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-primary border-0  rounded-2 btn-lg"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                          </svg>
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger border-0 rounded-2 text-dark btn-lg"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                          </svg>
+                        </button>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h2 class='w-75 text-start mx-auto fw-bolder text-white'>Lista de Noticias</h2>
+        <div
+            class="table-responsive-sm w-75 mx-auto rounded" 
+        >
+            <table
+                class="table table-success rounded table-striped"
+            >
+                <thead  class="table table-dark">
+                    <caption class='fw-bolder text-white'>Total {{ noticias|length }}</caption>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Fecha de Publicacion</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for noticia in noticias %}
+                    <tr class="">
+                    <td scope="row">{{ noticia.titulo|truncatechars:50 }}</td>
+                    <td>{{ noticia.fecha_de_publicacion }}</td>
+                    <td>{{ noticia.categoria_noticia }}</td>
+                    <td>
+                        <a
+                            type="button"
+                            class="btn btn-primary border-0  rounded-2 btn-lg"
+                            href="{% url 'noticias:edit_noticia' noticia.id %}"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                          </svg>
+                    </a>
+                        <a
+                            type="button"
+                            class="btn btn-danger border-0 rounded-2 text-dark btn-lg"
+                            href="{% url 'noticias:eliminar_noticia' noticia.id %}"
+                            
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                          </svg>
+                </a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a class="btn mx-auto d-flex"  href="{% url 'noticias:addnoticia' %}">Subir Noticias</a>
+        <!-- Otros elementos del panel de administrador -->
+        
+        <h2 class='w-75 text-start mx-auto fw-bolder text-white'>Lista de Productos</h2>
+        
+        <div
+            class="table-responsive-sm w-75 mx-auto rounded" 
+        >
+            <table
+                class="table table-light rounded table-striped"
+            >
+                <thead  class="table table-dark">
+                    <caption class='fw-bolder text-white'>Total {{ productos|length }}</caption>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                    <tr class="">
+                    <td scope="row">{{ producto.titulo|truncatechars:50 }}</td>
+                    <td>{{ producto.descripcion|truncatechars:50 }}</td>
+                    <td>
+                        {{ producto.categoria }}
+                        
+                    </td>
+                    <td>
+                        <a
+                            type="button"
+                            class="btn btn-primary border-0  rounded-2  btn-lg"
+                            href='{% url 'editar_producto' producto.id %}'
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                          </svg>
+                    </a>
+                        <a
+                            type="button"
+                            class="btn btn-danger border-0 rounded-2 text-dark btn-lg"
+                            href='{% url 'eliminar_producto' producto.id %}'
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                          </svg>
+                </a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class='d-flex'>
+            <a class="btn mx-auto d-flex" href="{% url 'cargar_producto' %}">Subir Productos</a>
+            <a class="btn mx-auto d-flex" href="{% url 'noticias:addcategoria' %}">Subir Categoria</a>
+        </div>
+        
 </section>
 {% endblock contenido  %}
 

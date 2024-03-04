@@ -1,5 +1,5 @@
 from django import forms
-from .models import Noticia, Comment
+from .models import Noticia, Comment, Categoria
 from django.forms import ModelForm, TextInput
 from django.forms.widgets import TextInput, FileInput, Select
 
@@ -33,3 +33,7 @@ class CommentForm(forms.ModelForm):
         super(CommentForm, self).__init__(*args, **kwargs)
         if user:
             self.instance.author = user.username
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Categoria
+        fields = ['nombre']
