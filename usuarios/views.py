@@ -30,12 +30,13 @@ def user_logout(request):
     return redirect('login')
 
 
-# Vista para el registro de usuarios    
+# Vista para el registro de usuarios  /*
+"""
 class Registro(CreateView):
     form_class = RegistroForm
     success_url = reverse_lazy('login')
     template_name = 'usuarios/registro.html'
-
+"""
 @login_required
 def admin_panel(request):
     users = Usuario.objects.all()
