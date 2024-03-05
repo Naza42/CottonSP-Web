@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from .models import Usuario
 from apps.noticias.models import Noticia
 from apps.productos.models import Producto
+from apps.contacto.models import Contacto
 from django.contrib.auth.decorators import login_required
 # Vista para el inicio de sesión
 def user_login(request):
@@ -39,8 +40,14 @@ class Registro(CreateView):
 """
 @login_required
 def admin_panel(request):
+    if request.method == 'POST':
+        idContacto = request.POST.get('id')
+        contacto = Contacto.objects.get(id = idContacto)
+        contacto.visto = True
+        contacto.save()
     users = Usuario.objects.all()
     noticias = Noticia.objects.all()
     productos= Producto.objects.all()
-    return render(request, 'usuarios/admin_panel.html', {'users': users,'noticias':noticias,'productos': productos})
+    contactos = Contacto.objects.filter(visto = False)
+    return render(request, 'usuarios/admin_panel.html', {'users': users,'noticias':noticias,'productos': productos,'contactos':contactos})
 

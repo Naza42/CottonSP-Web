@@ -125,3 +125,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/usuarios/login/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'c1722116.ferozo.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'comercial@cottonsp.com.ar'
+EMAIL_HOST_PASSWORD =''
+EMAIL_USE_SSL = True

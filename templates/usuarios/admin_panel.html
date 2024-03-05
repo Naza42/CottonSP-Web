@@ -179,6 +179,47 @@
             <a class="btn mx-auto d-flex" href="{% url 'noticias:addcategoria' %}">Subir Categoria</a>
         </div>
         
+        <div
+            class="table-responsive-sm w-75 mx-auto rounded mt-5"
+        >
+        <h3>Mensajes recibidos sin Ver</h3>
+            <table
+                class="table table-primary"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mensaje</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contacto in contactos  %}
+                    <tr class="">
+                        <td scope="row">{{ contacto.nombre }}</td>
+                        <td>{{ contacto.correo }}</td>
+                        <td>{{ contacto.mensaje }}</td>
+                        <td>
+                            <form method='post' action=''>
+                                <input type='hidden' value='{{ contacto.id }}' name='id'>
+                                
+                                {% csrf_token %}
+                                <button
+                                    type="submit"
+                                    class="btn btn-outline-primary rounded"
+                                >
+                                    Marcar como Visto
+                                </button>
+                                
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
 </section>
 {% endblock contenido  %}
 

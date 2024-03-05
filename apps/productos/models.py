@@ -6,9 +6,9 @@ class Producto(models.Model):
     imagen_2 = models.ImageField(upload_to='productos/',blank=True,null=True,default='img/hero-banner.jpg')
     imagen_3 = models.ImageField(upload_to='productos/',blank=True,null=True,default='img/hero-banner.jpg')
     titulo = models.CharField(max_length=100)
-    descripcion = RichTextField(max_length = 256)
+    descripcion = RichTextField(max_length = 700)
     resumen = RichTextField(max_length = 256,blank = True)
-    resumen_2 = RichTextField(max_length = 256,blank = True)
+    resumen_2 = RichTextField(max_length = 700,blank = True)
     url = models.URLField(blank = True,null = True)
     categoria = models.ForeignKey(Categoria,null = True,on_delete = models.DO_NOTHING, default = None)
     def __str__(self):

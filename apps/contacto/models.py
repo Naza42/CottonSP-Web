@@ -13,10 +13,10 @@ opciones_consultas = [
 class Contacto(models.Model):
     nombre = models.CharField(max_length=50)
     correo = models.EmailField()
-    tipo_consulta = models.BigIntegerField(choices=opciones_consultas)
+    #tipo_consulta = models.BigIntegerField(choices=opciones_consultas,null = True)
     mensaje = models.TextField()
-    avisos = models.BooleanField()
-
+    #avisos = models.BooleanField()
+    visto = models.BooleanField(default = False)
     def __str__(self):
         return self.nombre
 
