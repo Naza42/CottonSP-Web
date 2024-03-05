@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from apps.contacto.forms import ContactoFormIndex
 from django.views.i18n import set_language
+from apps.contacto.views import EnviarEmail
 def home(request):
     direccion = 'home.html'
     if request.LANGUAGE_CODE == 'en':
@@ -12,8 +13,17 @@ def home(request):
         formulario = ContactoFormIndex(request.POST)
         if formulario.is_valid():
             mensaje = "Muchas Gracias por ponerte en contacto con nosotros. Intentaremos responder lo mas antes posible"
+            form = formulario.save(commit=False)
+            try:
+                email = EnviarEmail(form)
+                if not email.send():
+                    form.save()
+            except:
+                form.save()
+            formulario = ContactoFormIndex()
             if request.LANGUAGE_CODE == 'en':
                 mensaje = "Thank you very much for contacting us. We will try to respond as soon as possible"
+                
     return render(request, direccion,{'form':formulario,'mensaje':mensaje})
 
 
