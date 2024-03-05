@@ -211,17 +211,20 @@ h3{
     }
   }
 
-  .siguiente {
+  .siguiente , .anterior {
     width: auto;
     height: 100%;
-    img{width: auto; height: 100%;}
+    svg{
+        transition: fill .3s;
+        width: auto; height: 100%;
+    }
+    svg:hover{
+        transition: all .3s;
+        
+        fill: #0D6EFD;
+    }
   }
 
-  .anterior {
-    width: auto;
-    height: 100%;
-    img{width: auto; height: 100%;}
-  }
   .test {
     flex: 0 0 25%;
     background-color: #292927;
