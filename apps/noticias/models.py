@@ -11,8 +11,8 @@ class Categoria(models.Model):
 
 
 class Noticia(models.Model):
-    titulo = models.CharField(max_length=250)
-    resumen = models.CharField(max_length=450)
+    titulo = models.CharField(max_length=400)
+    resumen = models.CharField(max_length=800)
     # contenido = models.TextField()
     contenido = RichTextField()
     fecha_de_publicacion = models.DateTimeField(auto_now_add=True)
