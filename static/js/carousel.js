@@ -3,7 +3,6 @@ let intervalo;
 let currentIndex = 0;
 let tarjetas = document.querySelectorAll('.test');
 let tarjetasVisibles = window.innerWidth <= 768 ? 1 : 3;
-
 function iniciarAvanceAutomatico() {
   intervalo = setInterval(function() {
     siguienteTarjeta();
@@ -17,9 +16,10 @@ function mostrarTarjetas(index) {
   const translateValue = -index * 100 + '%';
   tarjetasWrapper.style.transform = 'translateX(' + translateValue + ')';
 }
+
 function siguienteTarjeta() {
-  const target = window.innerWidth <= 768 ? tarjetas.length - 1 : tarjetas.length%tarjetasVisibles;
-  const isNotEndCarousel =window.innerWidth <= 768 ? currentIndex < target : currentIndex <= target;
+  const target = window.innerWidth <= 768 ? tarjetas.length - 1 : tarjetas.length / tarjetasVisibles;
+  const isNotEndCarousel =window.innerWidth <= 768 ? currentIndex < target : currentIndex + 1 < target;
   if (isNotEndCarousel) {
     currentIndex++;
   } else {
@@ -27,8 +27,9 @@ function siguienteTarjeta() {
   }
   mostrarTarjetas(currentIndex);
 }
+
 function anteriorTarjeta() {
-  const target = window.innerWidth <= 768 ? tarjetas.length - tarjetasVisibles : tarjetas.length%tarjetasVisibles  + 1;
+  const target = window.innerWidth <= 768 ? tarjetas.length - tarjetasVisibles : tarjetas.length / tarjetasVisibles -1;
   if (currentIndex != 0) {
     currentIndex--;
   } else {
@@ -54,3 +55,41 @@ window.addEventListener('resize', function() {
 });
 
 iniciarAvanceAutomatico();
+
+
+
+
+/*
+
+
+
+
+
+
+function anteriorTarjeta() {
+  const target = tarjetas.length - tarjetasVisibles;
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = target;
+  }
+  mostrarTarjetas(currentIndex);
+}
+
+document.querySelector('#tarjetasCarrusel').addEventListener('click', function(event) {
+  tarjetas = document.querySelectorAll('.test');
+  reiniciarAvanceAutomatico();
+  if (event.target.classList.contains('siguiente')) {
+    siguienteTarjeta();
+  } else if (event.target.classList.contains('anterior')) {
+    anteriorTarjeta();
+  }
+});
+
+window.addEventListener('resize', function() {
+  tarjetasVisibles = window.innerWidth <= 768 ? 1 : 3;
+  reiniciarAvanceAutomatico();
+});
+
+iniciarAvanceAutomatico();
+*/
