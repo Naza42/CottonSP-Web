@@ -38,3 +38,5 @@ def set_language_view(request):
     if request.method == "POST":
         return set_language(request)
     
+def cottonAcademy(request):
+    return render(request,'cottonAcademy.html')
