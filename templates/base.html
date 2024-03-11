@@ -194,7 +194,7 @@
 
 
       </ul>
-      <div class="div_lenguajes" >              
+      {% comment %} <div class="div_lenguajes" >              
         <form action="{% url 'set_language' %}" method="POST" class='d-flex mt-3 justify-content-around'>
           {% csrf_token %}
           <input type="submit" value="Cambiar idioma" class='btn fs-6 rounded ' />
@@ -203,7 +203,7 @@
               <option value="es">Español</option>         
             </select>      
         </form>
-      </div>
+      </div> {% endcomment %}
     </div>
     
   </footer>

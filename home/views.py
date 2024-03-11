@@ -4,8 +4,8 @@ from django.views.i18n import set_language
 from apps.contacto.views import EnviarEmail
 def home(request):
     direccion = 'home.html'
-    if request.LANGUAGE_CODE == 'en':
-        direccion = 'en/homeEn.html'
+    # if request.LANGUAGE_CODE == 'en':
+    #     direccion = 'en/homeEn.html'
     
     formulario = ContactoFormIndex()
     mensaje = ''
@@ -21,8 +21,8 @@ def home(request):
             except:
                 form.save()
             formulario = ContactoFormIndex()
-            if request.LANGUAGE_CODE == 'en':
-                mensaje = "Thank you very much for contacting us. We will try to respond as soon as possible"
+            # if request.LANGUAGE_CODE == 'en':
+            #     mensaje = "Thank you very much for contacting us. We will try to respond as soon as possible"
                 
     return render(request, direccion,{'form':formulario,'mensaje':mensaje})
 
@@ -34,9 +34,9 @@ def quienes_somos(request):
     return render(request, direccion)
 
 
-def set_language_view(request):
-    if request.method == "POST":
-        return set_language(request)
+# def set_language_view(request):
+#     if request.method == "POST":
+#         return set_language(request)
     
 def cottonAcademy(request):
     return render(request,'cottonAcademy.html')
