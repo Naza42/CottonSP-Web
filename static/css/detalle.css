@@ -184,13 +184,10 @@ body {
 }
 
 .blog .blog-details .meta-bottom a {
-  color: rgba(34, 34, 34, 0.8);
+  color: var(--color-primary);
   transition: 0.3s;
 }
 
-.blog .blog-details .meta-bottom a:hover {
-  color: var(--color-primary);
-}
 
 .blog .blog-details .meta-bottom .cats {
   list-style: none;
@@ -370,13 +367,16 @@ body {
   }
   
   .blog .blog-details .meta-bottom a {
-    color: rgba(34, 34, 34, 0.8);
-    transition: 0.3s;
-  }
-  
-  .blog .blog-details .meta-bottom a:hover {
     color: var(--color-primary);
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: nowrap;
+    
   }
+  .blog .blog-details .meta-bottom a::before{
+      content: 'Ir a la Categoria : ';
+  }
+
   
   .blog .blog-details .meta-bottom .cats {
     list-style: none;
