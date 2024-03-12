@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 <head>
     <link rel="stylesheet" href="{% static 'css/listar.css' %}">
 </head>
@@ -16,7 +17,7 @@
         {% endfor %}
 
     {% else %}
-        <h1>no hay noticias :</h1>
+        <h1>{% trans "no hay noticias :" %}</h1>
     {% endif %}
 {% endblock contenido %}
 

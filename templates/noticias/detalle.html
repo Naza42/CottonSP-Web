@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block titulo %}DETALLE{% endblock titulo %}
+{% block titulo %}{% trans "DETALLE" %}{% endblock titulo %}
 {% block estilos %}
 <link rel="stylesheet" href="{% static 'css/detalle.css' %}">
 {% endblock estilos %}
@@ -15,8 +16,8 @@
         <nav>
           <div class="container">
             <ol>
-              <li><a href="{% url 'noticias:listar' %}">Noticias</a></li>
-              <li>Detalle de la noticia</li>
+              <li><a href="{% url 'noticias:listar' %}">{% trans "Noticias " %}</a></li>
+              <li>{% trans "Detalle de la noticia" %}</li> 
             </ol>
           </div>
         </nav>
