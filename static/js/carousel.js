@@ -29,8 +29,8 @@ function siguienteTarjeta() {
 }
 
 function anteriorTarjeta() {
-  const target = window.innerWidth <= 768 ? tarjetas.length - tarjetasVisibles : tarjetas.length / tarjetasVisibles -1;
-  if (currentIndex != 0) {
+  const target = window.innerWidth <= 768 ? tarjetas.length - 1 : Math.ceil(tarjetas.length / tarjetasVisibles) - 1;
+  if (currentIndex > 0) {
     currentIndex--;
   } else {
     currentIndex = target;
@@ -48,10 +48,13 @@ document.querySelector('#tarjetasCarrusel').addEventListener('click', function(e
   }
 });
 window.addEventListener('resize', function() {
-  currentIndex = 0
-  tarjetasVisibles = window.innerWidth <= 768 ? 1 : 3;
-  mostrarTarjetas(currentIndex)
-  reiniciarAvanceAutomatico();
+  if(window.innerWidth >= 768){
+    currentIndex = 0
+    tarjetasVisibles = window.innerWidth <= 768 ? 1 : 3;
+    mostrarTarjetas(currentIndex)
+    reiniciarAvanceAutomatico();
+  }
+  
 });
 
 iniciarAvanceAutomatico();
