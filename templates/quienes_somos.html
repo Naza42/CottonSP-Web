@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %} Quienes Somos {% endblock titulo %}
+{% load i18n %}
+{% block titulo %} {% trans "Quienes Somos" %} {% endblock titulo %}
 {% block estilos %}
 <link rel="stylesheet" href='{% static "css/about.css" %}'>
 
@@ -9,22 +10,19 @@
 
 {% block contenido %}
     <section class="section hero">
-      <h1 class=" title">¿Quienes Somos?</h1>
+      <h1 class=" title">{% trans "¿Quienes Somos?" %}</h1>
         <div class="cottonInfo row cottonSP pb-5 mb-2">
             <div class="card mx-auto col-12 col-lg-6 justify-content-end" >
                 <img src="{% static 'img/hero-banner.jpg' %}" class="card-img" alt="..." loading="lazy">
             </div>
             <div class="col-12 col-lg-6">    
                   <h1 class="d-flex cotton">Cotton SP</h1>              
-                  <p class="card-text fw-semibold"><span class="span_gradient" style="display: inline-block">Cotton SP</span> es una marca que se enfoca en desarrollar 
-                    <span class="span_gradient" style="display: inline-block"> soluciones de software de alta calidad </span> e innovadoras de manera sostenible, 
-                    con el propósito de mejorar la <span class="span_gradient" style="display: inline-block">calidad de vida y contribuir al bienestar social.</span>
+                  <p class="card-text fw-semibold"><span class="span_gradient" style="display: inline-block">Cotton SP</span> {% trans "es una marca que se enfoca en desarrollar" %} 
+                    <span class="span_gradient" style="display: inline-block"> {% trans "soluciones de software de alta calidad" %} </span> {% trans "e innovadoras de manera sostenible, con el propósito de mejorar la" %} <span class="span_gradient" style="display: inline-block">{% trans "calidad de vida y contribuir al bienestar social." %}</span>
                     <br>
-                    La propuesta de valor única de Cotton SP se basa en su enfoque en habilidades blandas, 
-                    metodologías ágiles y objetivos de desarrollo sostenible, así como en su compromiso con la responsabilidad social. 
-                    También se diferencian de la competencia por su enfoque en la 
-                    <span class="span_gradient" style="display: inline-block">flexibilidad y la adaptabilidad</span>. 
-                    Permitiéndo ofrecer soluciones personalizadas y ajustadas a las necesidades específicas de cada cliente.                
+                    {% trans "La propuesta de valor única de Cotton SP se basa en su enfoque en habilidades blandas, metodologías ágiles y objetivos de desarrollo sostenible, así como en su compromiso con la responsabilidad social. También se diferencian de la competencia por su enfoque en la" %} 
+                    <span class="span_gradient" style="display: inline-block">{% trans "flexibilidad y la adaptabilidad" %}</span>. 
+                    {% trans "Permitiéndo ofrecer soluciones personalizadas y ajustadas a las necesidades específicas de cada cliente." %}                
                     </p>
             </div>
         
@@ -36,14 +34,11 @@
             <h1 class="d-flex ">
               <a class="cotton linkcottonAC" href="#">Cotton Academy</a>
             </h1 >              
-            <p class="card-text fw-semibold"><span class="cottonAC_color" style="display: inline-block">En Cotton Academy</span>, 
-              nos apasiona impulsar el talento y la innovación desde sus raíces. Como parte del programa Innova, nos dedicamos a 
-              formar a individuos desde cero, brindándoles las habilidades necesarias para triunfar en el exigente mundo laboral de hoy.
+            <p class="card-text fw-semibold"><span class="cottonAC_color" style="display: inline-block">{% trans "En Cotton Academy" %}</span>, 
+              {% trans "nos apasiona impulsar el talento y la innovación desde sus raíces. Como parte del programa Innova, nos dedicamos a formar a individuos desde cero, brindándoles las habilidades necesarias para triunfar en el exigente mundo laboral de hoy." %}
               <br>
-              Nuestro bootcamp no se trata solo de aprender a programar, sino de aprender a pensar de manera crítica y creativa. 
-              En <span class="cottonAC_color" style="display: inline-block">Cotton Academy</span>, 
-              cada línea de código que escribimos es una oportunidad para desarrollar habilidades analíticas y resolver problemas de 
-              manera eficiente.               
+              {% trans "Nuestro bootcamp no se trata solo de aprender a programar, sino de aprender a pensar de manera crítica y creativa. En" %} <span class="cottonAC_color" style="display: inline-block">Cotton Academy</span>, 
+              {% trans "cada línea de código que escribimos es una oportunidad para desarrollar habilidades analíticas y resolver problemas de manera eficiente." %}               
               </p>
           </div>
         </div>
