@@ -42,9 +42,11 @@
                     name=""
                     id=""
                     class="btn btn-secondary mb-5 mb-lg-0 w-100 link_producto"
-                    href="#"
                     role="button"
-                    >{% trans "Lo Quiero" %}
+
+                    target='_blank'
+                    href='https://api.whatsapp.com/send?phone=5493644371204&text=Hola me interesa {{ producto.titulo }}, lo vi en el sitio web y quiero mas información 😁'
+                >{% trans "Lo Quiero" %}
                 </a>
             </div>
         </div>
