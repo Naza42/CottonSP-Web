@@ -90,19 +90,19 @@
         <ul class="navbar-list w-75 justify-content-around">
 
           <li>
-            <a href="{% url 'home' %}" class="navbar-link">Inicio</a>
+            <a href="{% url 'home' %}" class="navbar-link">{% trans "Inicio" %}</a>
           </li>
 
           <li>
-            <a href="{% url 'quienes_somos' %}" class="navbar-link">Quienes somos</a>
+            <a href="{% url 'quienes_somos' %}" class="navbar-link">{% trans "Quienes somos" %}</a>
           </li>
 
           <li>
-            <a href="{% url 'lista_productos' %}" class="navbar-link">Productos</a>
+            <a href="{% url 'lista_productos' %}" class="navbar-link">{% trans "Productos" %}</a>
           </li>
 
           <li>
-            <a href="{% url 'noticias:listar' %}" class="navbar-link">Noticias</a>
+            <a href="{% url 'noticias:listar' %}" class="navbar-link">{% trans "Noticias" %}</a>
           </li>
           <!--
           <li>
@@ -194,16 +194,18 @@
 
 
       </ul>
-      {% comment %} <div class="div_lenguajes" >              
-        <form action="{% url 'set_language' %}" method="POST" class='d-flex mt-3 justify-content-around'>
-          {% csrf_token %}
-          <input type="submit" value="Cambiar idioma" class='btn fs-6 rounded ' />
-            <select class="form-select btn rounded border-0" aria-label="Idioma" name='language'>
-              <option value="en">Ingles</option>
-              <option value="es">Español</option>         
-            </select>      
+      <div class="div_lenguajes">
+        <p style="text-align: center;">{% trans "Idiomas" %}</p>
+        <form id="language-form" action="{% url 'set_language' %}" method="POST" class='d-flex mt-3 justify-content-around'>
+            {% csrf_token %}
+            <button type="submit" name="language" value="en" class="btn rounded border-0{% if request.LANGUAGE_CODE == 'en' %} active{% endif %}" style="{% if request.LANGUAGE_CODE == 'en' %}box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);{% endif %}">{% trans "Ingles" %}</button>
+            <button type="submit" name="language" value="es" class="btn rounded border-0{% if request.LANGUAGE_CODE == 'es' %} active{% endif %}" style="{% if request.LANGUAGE_CODE == 'es' %}box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);{% endif %}">{% trans "Español" %}</button>
         </form>
-      </div> {% endcomment %}
+      </div>
+    
+    
+    
+    
     </div>
     
   </footer>

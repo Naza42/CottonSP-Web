@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-12 16:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\project_django\settings\base.py:115
+msgid "Spanish"
+msgstr "Español"
+
+#: .\project_django\settings\base.py:116
+msgid "English"
+msgstr "Ingles"
+
+#: .\templates\base.html:93
+msgid "Inicio"
+msgstr "Home"
+
+#: .\templates\base.html:97
+msgid "Quienes somos"
+msgstr "About Us"
+
+#: .\templates\base.html:101 .\templates\productos\cargar_producto.html:3
+msgid "Productos"
+msgstr "Products"
+
+#: .\templates\base.html:105 .\templates\noticias\listar.html:15
+msgid "Noticias"
+msgstr "News"
+
+#: .\templates\base.html:171
+#, python-format
+msgid " %(current_year)s CottonSP. All rights reserved."
+msgstr " %(current_year)s CottonSP. All rights reserved."
+
+#: .\templates\base.html:199
+msgid "Idiomas"
+msgstr "Languages"
+
+#: .\templates\base.html:202
+msgid "Ingles"
+msgstr "English"
+
+#: .\templates\base.html:203
+msgid "Español"
+msgstr "Spanish"
+
+#: .\templates\carousel.html:5
+msgid "Nuestro Equipo"
+msgstr "Our Team"
+
+#: .\templates\home.html:31
+msgid "Creamos software para "
+msgstr "We create software to "
+
+#: .\templates\home.html:31
+msgid "potenciar"
+msgstr "enhance"
+
+#: .\templates\home.html:31
+msgid " tu negocio."
+msgstr " your business."
+
+#: .\templates\home.html:35
+msgid ""
+"Transformamos tus ideas en soluciones digitales innovadoras y escalables."
+msgstr ""
+"We transform your ideas into innovative and scalable digital solutions."
+
+#: .\templates\home.html:39
+msgid "Nuestros Productos"
+msgstr "Our Products"
+
+#: .\templates\home.html:41
+msgid "Contactanos"
+msgstr "Contact Us"
+
+#: .\templates\home.html:63
+msgid "¿Qué ofrecemos?"
+msgstr "What do we offer?"
+
+#: .\templates\home.html:66
+msgid ""
+"En CottonSP, nuestra pasión es convertir tus ideas en soluciones digitales "
+"innovadoras y escalables. Para ello, te ofrecemos una amplia gama de "
+"servicios de desarrollo de software que se adaptan a las necesidades "
+"específicas de tu negocio."
+msgstr ""
+"At CottonSP, our passion is turning your ideas into innovative and scalable "
+"digital solutions. To achieve this, we offer a wide range of software "
+"development services tailored to the specific needs of your business."
+
+#: .\templates\home.html:88
+msgid "Desarrollo de aplicaciones web"
+msgstr "Web Application Development"
+
+#: .\templates\home.html:91
+msgid ""
+"Diseñamos y desarrollamos aplicaciones web personalizadas que se ajustan a "
+"las necesidades específicas de tu negocio."
+msgstr ""
+"We design and develop customized web applications that meet the specific "
+"needs of your business."
+
+#: .\templates\home.html:105
+msgid "Desarrollo de Aplicaciones Móviles"
+msgstr "Mobile Application Development"
+
+#: .\templates\home.html:108
+msgid ""
+"Desarrollamos aplicaciones móviles nativas para iOS y Android con un diseño "
+"atractivo y una experiencia de usuario fluida."
+msgstr ""
+"We develop native mobile applications for iOS and Android with attractive "
+"design and a smooth user experience."
+
+#: .\templates\home.html:122
+msgid "Software a medida"
+msgstr "Custom Software"
+
+#: .\templates\home.html:125
+msgid ""
+"Más allá de simples programas, diseñamos herramientas digitales innovadoras "
+"que se ajustan a las necesidades específicas de tu empresa"
+msgstr ""
+"Beyond simple programs, we design innovative digital tools tailored to the "
+"specific needs of your company"
+
+#: .\templates\home.html:138
+msgid "Actualizacion"
+msgstr "Update"
+
+#: .\templates\home.html:141
+msgid ""
+"Comprendemos que las migraciones y actualizaciones de sistemas pueden ser un "
+"proceso complejo y desafiante. Por ello, te ofrecemos un servicio integral "
+"que te permite navegar el cambio con confianza y minimizar la disrupción en "
+"tu negocio."
+msgstr ""
+"We understand that system migrations and updates can be a complex and "
+"challenging process. Therefore, we offer a comprehensive service that allows "
+"you to navigate the change with confidence and minimize disruption in your "
+"business."
+
+#: .\templates\home.html:152
+msgid "Empresas con las cual Trabajamos"
+msgstr "Companies We Work With"
+
+#: .\templates\home.html:192
+msgid "Contactate con nosotros"
+msgstr "Get in Touch With Us"
+
+#: .\templates\home.html:195
+msgid ""
+"Aportamos soluciones rápidas para hacer la vida de los clientes mas facil. "
+"¿Tiene alguna pregunta? Comuníquese con nosotros desde este formulario de "
+"contacto y nos comunicaremos con usted en la brevedad."
+msgstr ""
+"We provide quick solutions to make our clients' lives easier. Do you have "
+"any questions? Contact us through this form and we will get in touch with "
+"you shortly."
+
+#: .\templates\home.html:223
+msgid "Enviar"
+msgstr "Send"
+
+#: .\templates\noticias\detalle.html:4
+msgid "DETALLE"
+msgstr "DETAIL"
+
+#: .\templates\noticias\detalle.html:19
+msgid "Noticias "
+msgstr "News "
+
+#: .\templates\noticias\detalle.html:20
+msgid "Detalle de la noticia"
+msgstr "News Detail"
+
+#: .\templates\noticias\listar.html:4
+msgid "NOTICIAS"
+msgstr "NEWS"
+
+#: .\templates\noticias\listar.html:24
+msgid "Categorias"
+msgstr "Categories"
+
+#: .\templates\noticias\listar.html:26
+msgid "Todos"
+msgstr "All"
+
+#: .\templates\noticias\listar.html:71
+msgid "No se han publicado noticias todavía."
+msgstr "No news has been published yet."
+
+#: .\templates\noticias\listarNoticia.html:20
+msgid "no hay noticias :"
+msgstr "no news :"
+
+#: .\templates\productos\detalle_producto.html:24
+msgid " Que Ofrecemos "
+msgstr " What We Offer "
+
+#: .\templates\productos\detalle_producto.html:38
+msgid "Probar demo"
+msgstr "Try Demo"
+
+#: .\templates\productos\detalle_producto.html:47
+msgid "Lo Quiero"
+msgstr "I Want It"
+
+#: .\templates\productos\detalle_producto.html:56
+msgid " Que beneficios te ofrecemos "
+msgstr " What Benefits Do We Offer "
+
+#: .\templates\productos\detalle_producto.html:79
+msgid "Ya te decidiste?"
+msgstr "Have You Decided Yet?"
+
+#: .\templates\productos\detalle_producto.html:86
+msgid "Si. Lo quiero!"
+msgstr "Yes. I want it!"
+
+#: .\templates\productos\detalle_producto.html:94
+msgid "No. Quisiera saber mas."
+msgstr "No. I would like to know more."
+
+#: .\templates\productos\productos.html:22
+msgid "Mejora tu rendimiento empresarial con nuestras  "
+msgstr "Improve your business performance with our "
+
+#: .\templates\productos\productos.html:22
+msgid "soluciones"
+msgstr "digital"
+
+#: .\templates\productos\productos.html:22
+msgid " digitales."
+msgstr " solutions"
+
+#: .\templates\productos\productos.html:25
+msgid ""
+"Nuestros productos están cuidadosamente diseñados y desarrollados para "
+"satisfacer las necesidades de tu empresa en términos de eficiencia, "
+"productividad y escalabilidad."
+msgstr ""
+"Our products are carefully designed and developed to meet your company's "
+"needs in terms of efficiency, productivity, and scalability."
+
+#: .\templates\productos\productos.html:55
+#: .\templates\productos\productos.html:101
+msgid "Anterior"
+msgstr "Previous"
+
+#: .\templates\productos\productos.html:59
+#: .\templates\productos\productos.html:105
+msgid "Siguiente"
+msgstr "Next"
+
+#: .\templates\productos\productos.html:69
+#: .\templates\productos\productos.html:81
+msgid "Ver Detalles"
+msgstr "View Details"
+
+#: .\templates\quienes_somos.html:4
+msgid "Quienes Somos"
+msgstr "Who We Are"
+
+#: .\templates\quienes_somos.html:13
+msgid "¿Quienes Somos?"
+msgstr "Who Are We?"
+
+#: .\templates\quienes_somos.html:20
+msgid "es una marca que se enfoca en desarrollar"
+msgstr "is a brand focused on developing"
+
+#: .\templates\quienes_somos.html:21
+msgid "soluciones de software de alta calidad"
+msgstr "high-quality software solutions"
+
+#: .\templates\quienes_somos.html:21
+msgid "e innovadoras de manera sostenible, con el propósito de mejorar la"
+msgstr "and innovative in a sustainable way, with the purpose of improving"
+
+#: .\templates\quienes_somos.html:21
+msgid "calidad de vida y contribuir al bienestar social."
+msgstr "quality of life and contributing to social welfare."
+
+#: .\templates\quienes_somos.html:23
+msgid ""
+"La propuesta de valor única de Cotton SP se basa en su enfoque en "
+"habilidades blandas, metodologías ágiles y objetivos de desarrollo "
+"sostenible, así como en su compromiso con la responsabilidad social. También "
+"se diferencian de la competencia por su enfoque en la"
+msgstr ""
+"Cotton SP's unique value proposition is based on its focus on soft skills, "
+"agile methodologies and development objectivessustainable, as well as in its "
+"commitment to social responsibility. Also They differentiate themselves from "
+"the competition by their focus on"
+
+#: .\templates\quienes_somos.html:24
+msgid "flexibilidad y la adaptabilidad"
+msgstr "flexibility and adaptability"
+
+#: .\templates\quienes_somos.html:25
+msgid ""
+"Permitiéndo ofrecer soluciones personalizadas y ajustadas a las necesidades "
+"específicas de cada cliente."
+msgstr ""
+"Allowing us to offer customized solutions tailored to the specific needs of "
+"each client."
+
+#: .\templates\quienes_somos.html:37
+msgid "En Cotton Academy"
+msgstr "At Cotton Academy"
+
+#: .\templates\quienes_somos.html:38
+msgid ""
+"nos apasiona impulsar el talento y la innovación desde sus raíces. Como "
+"parte del programa Innova, nos dedicamos a formar a individuos desde cero, "
+"brindándoles las habilidades necesarias para triunfar en el exigente mundo "
+"laboral de hoy."
+msgstr ""
+"We are passionate about promoting talent and innovation from its roots. As "
+"part of the Innova program, we are dedicated to training individuals from "
+"scratch,providing them with the skills necessary to succeed in the demanding "
+"worldtoday's work."
+
+#: .\templates\quienes_somos.html:40
+msgid ""
+"Nuestro bootcamp no se trata solo de aprender a programar, sino de aprender "
+"a pensar de manera crítica y creativa. En"
+msgstr ""
+"Our bootcamp is not just about learning to program, but about learningto "
+"think critically and creatively. In"
+
+#: .\templates\quienes_somos.html:41
+msgid ""
+"cada línea de código que escribimos es una oportunidad para desarrollar "
+"habilidades analíticas y resolver problemas de manera eficiente."
+msgstr ""
+"every line of code we write is an opportunity to developanalytical skills "
+"and solve problems efficiently."

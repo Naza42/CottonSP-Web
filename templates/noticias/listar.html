@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block titulo %}NOTICIAS{% endblock titulo %}
+{% block titulo %}{% trans "NOTICIAS" %}{% endblock titulo %}
 {% block estilos %}
 <link rel="stylesheet" href="{% static 'css/listar.css' %}">
 {% endblock estilos %}
@@ -11,7 +12,7 @@
               <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                   <div class="col-lg-6 text-center">
-                    <h2>Noticias</h2>
+                    <h2>{% trans "Noticias" %}</h2>
                   </div>
                 </div>
               </div>
@@ -20,9 +21,9 @@
             <ol>
               {% with categoria=request.GET.categoria %} 
               
-              <li id="btn-categoria" class="fw-bolder"><span>Categorias</span></li>
+              <li id="btn-categoria" class="fw-bolder"><span>{% trans "Categorias" %}</span></li>
               <div id="categorias">
-              <a class="{% if not categoria %} select {% endif %}"  href="{% url 'noticias:listar' %}">Todos</a>
+              <a class="{% if not categoria %} select {% endif %}"  href="{% url 'noticias:listar' %}">{% trans "Todos" %}</a>
               {% for cat in categorias %}
                   <a                 
                   {% if categoria ==  cat.pk|stringformat:'d' %}
@@ -66,7 +67,7 @@
                             </a>
                         </div>
                     {% empty %}
-                        <p>No se han publicado noticias todavía.</p>
+                        <p>{% trans "No se han publicado noticias todavía." %}</p>
                     {% endfor %}
                 </div>
             </div>
